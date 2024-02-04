@@ -1,0 +1,9 @@
+/index.html.GET took 275ms. User: unknown
+/js/site.js.GET took 7ms. User: unknown
+/css/site.css.GET took 31ms. User: unknown
+/favicon.ico.GET took 26ms. User: unknown
+/myTask.GET took 60ms. User: unknown
+/myTask/3.DELETE took 41ms. User: unknown
+/myTask.GET took 0ms. User: unknown
+/myTask/5.DELETE took 3ms. User: unknown
+/myTask.GET took 0ms. User: unknown
