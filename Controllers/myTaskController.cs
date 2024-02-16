@@ -2,9 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using myTask.Models;
 using myTask.Interfaces;
 
-namespace myTask.Controllers;
-
-[ApiController]
+namespace myTask.Controllers{
+    [ApiController]
 [Route("[controller]")]
 public class myTaskController : ControllerBase
 {
@@ -12,7 +11,10 @@ public class myTaskController : ControllerBase
     public myTaskController(ITaskService TaskService)
     {
         this.TaskService = TaskService;
+// this.userId=///
+
     }
+
     [HttpGet]
     public ActionResult<List<theTask>> GetAll()=>
         TaskService.GetAll();
@@ -63,3 +65,6 @@ public class myTaskController : ControllerBase
         }
     
 }
+
+}
+

@@ -83,3 +83,33 @@ C:\Users\USER\Desktop\core\2023-02-04\.NetCoreHomework\obj\Debug\net6.0\refint\m
 C:\Users\USER\Desktop\core\2023-02-04\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
 C:\Users\USER\Desktop\core\2023-02-04\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
 C:\Users\USER\Desktop\core\2023-02-04\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.AssemblyReference.cache
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.GeneratedMSBuildEditorConfig.editorconfig
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfoInputs.cache
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfo.cs
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CoreCompileInputs.cache
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cs
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cache
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\refint\myTask.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\appsettings.Development.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\appsettings.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\myTask.staticwebassets.runtime.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\myTask.exe
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\myTask.deps.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\myTask.runtimeconfig.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\myTask.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\myTask.pdb
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Microsoft.OpenApi.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.build.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.development.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\scopedcss\bundle\myTask.styles.css
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CopyComplete
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Data\task.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Data\users.json

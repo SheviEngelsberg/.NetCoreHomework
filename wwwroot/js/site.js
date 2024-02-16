@@ -45,7 +45,7 @@ function displayEditForm(id) {
 
     document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-id').value = item.id;
-    document.getElementById('edit-isDone').checked = item.isGlutenFree;
+    document.getElementById('edit-isDone').checked = item.isDone;
     document.getElementById('editForm').style.display = 'block';
 }
 
@@ -95,7 +95,7 @@ function _displayItems(data) {
         let isDoneCheckbox = document.createElement('input');
         isDoneCheckbox.type = 'checkbox';
         isDoneCheckbox.disabled = true;
-        isDoneCheckbox.checked = item.isGlutenFree;
+        isDoneCheckbox.checked = item.isDone;
 
         let editButton = button.cloneNode(false);
         editButton.innerText = 'Edit';

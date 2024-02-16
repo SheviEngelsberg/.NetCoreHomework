@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XKY5kg1fGKOAjEgNwV0IdtTsHRLfdmEOeAvmlNKo2Ck=",
+  "Hash": "ihEf5kMHuW3P1CFHaVCGf3rS2K8ZdVv3iUSHFDhD7kA=",
   "Source": "myTask",
   "BasePath": "_content/myTask",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "myTask\\wwwroot",
       "Source": "myTask",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2023-02-04\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\אינגלסברג בת שבע\\core\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2023-02-04\\.NetCoreHomework\\wwwroot\\css\\site.css",
+      "Identity": "Z:\\B\\אינגלסברג בת שבע\\core\\.NetCoreHomework\\wwwroot\\css\\site.css",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2023-02-04\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\אינגלסברג בת שבע\\core\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2023-02-04\\.NetCoreHomework\\wwwroot\\index.html",
+      "Identity": "Z:\\B\\אינגלסברג בת שבע\\core\\.NetCoreHomework\\wwwroot\\index.html",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2023-02-04\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\אינגלסברג בת שבע\\core\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2023-02-04\\.NetCoreHomework\\wwwroot\\js\\site.js",
+      "Identity": "Z:\\B\\אינגלסברג בת שבע\\core\\.NetCoreHomework\\wwwroot\\js\\site.js",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2023-02-04\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\אינגלסברג בת שבע\\core\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "RelativePath": "js/site.js",
       "AssetKind": "All",

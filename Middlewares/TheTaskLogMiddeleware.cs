@@ -1,8 +1,7 @@
 using System.Diagnostics;
 
-namespace myTask.Middlewares;
-
-public class TheTaskLogMiddeleware
+namespace myTask.Middlewares{
+    public class TheTaskLogMiddeleware
 {
     private RequestDelegate next;
     private string logger;
@@ -38,3 +37,5 @@ public static partial class MyMiddleExtensions
         return builder.UseMiddleware<TheTaskLogMiddeleware>(FilePath);
     }
 }
+}
+
