@@ -1,13 +1,14 @@
 using myTask.Interfaces;
 using myTask.Models;
+namespace myTask.Services;
 using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Diagnostics;
-namespace myTask.Services{
+
 public class userService : IUserService
 {
-    List<user> users {get;}
+    List<User> users {get;}
     
     private string fileName ="users.json";
     public userService(IWebHostEnvironment  webHost)
@@ -15,7 +16,7 @@ public class userService : IUserService
         this.fileName =Path.Combine(webHost.ContentRootPath,"Data" ,"users.json");
         using (var jsonFile = File.OpenText(fileName))
         {
-            users = JsonSerializer.Deserialize<List<user>>(jsonFile.ReadToEnd(),
+            users = JsonSerializer.Deserialize<List<User>>(jsonFile.ReadToEnd(),
             new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -32,13 +33,13 @@ public class userService : IUserService
     // public  List<theTask> GetAll() => tasks;
 
     //שליפת משתמש לפי ID
-    public  user Get(int userId) 
+    public  User Get(int id) 
     {
-        return users.FirstOrDefault(p => p.Id == userId);
+        return users.FirstOrDefault(p => p.Id == id);
     }
 
     //הוספת משתמש
-    public void Add(user newUser)
+    public void Add(User newUser)
     {
         newUser.Id = users.Count()+1;
         users.Add(newUser);
@@ -72,5 +73,5 @@ public class userService : IUserService
     //     return ToString();
     // }
 }
-}
+
 

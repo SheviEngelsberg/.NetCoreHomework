@@ -8,7 +8,6 @@ namespace myTask.Controllers{
 public class userController : ControllerBase
 {
     IUserService userService;
-    long userId;
     public userController(IUserService userService)
     {
         this.userService = userService;
@@ -22,16 +21,17 @@ public class userController : ControllerBase
     
 
     [HttpGet("{id}")]
-    public ActionResult<user> Get(int userId)
+    public ActionResult<User> Get(int id)
     {
-        var user = userService.Get(userId);
+        var user = userService.Get(id);
         if (user == null)
             return NotFound();
         return user;
     }
 
+
     [HttpPost]
-    public IActionResult Create(user user)
+    public IActionResult Create(User user)
     {
         userService.Add(user);
         return CreatedAtAction(nameof(Create), new {id=user.Id}, user);
@@ -54,13 +54,13 @@ public class userController : ControllerBase
 //         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int userId)
+        public IActionResult Delete(int id)
         {
-            var user = userService.Get(userId);
+            var user = userService.Get(id);
             if (user is null)
                 return  NotFound();
 
-            userService.Delete(userId);
+            userService.Delete(id);
 
             return Content(userService.Count.ToString());
         }

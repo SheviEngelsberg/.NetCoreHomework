@@ -33,9 +33,12 @@ namespace core_l1
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "KsPizza", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "our tasks", Version = "v1" });
             });
-            services.AddSingleton<ITaskService, theTaskService>();
+            services.AddSingleton<ITaskService, taskService>();
+            services.AddSingleton<IUserService, userService>();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

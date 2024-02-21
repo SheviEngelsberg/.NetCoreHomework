@@ -113,3 +113,33 @@ Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTas
 Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
 Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Data\task.json
 Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Data\users.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\appsettings.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\Data\users.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\myTask.staticwebassets.runtime.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\myTask.exe
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\myTask.deps.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\myTask.runtimeconfig.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\myTask.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\myTask.pdb
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfo.cs
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\scopedcss\bundle\myTask.styles.css
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CopyComplete
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\refint\myTask.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
+C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\Data\tasks.json
