@@ -111,7 +111,6 @@ Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\scope
 Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CopyComplete
 Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
 Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
-Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Data\task.json
 Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Data\users.json
 C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\appsettings.json
@@ -143,3 +142,4 @@ C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.p
 C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
 C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
 C:\Users\USER\Desktop\core\2024-02-21\.NetCoreHomework\bin\Debug\net6.0\Data\tasks.json
+Z:\B\אינגלסברג בת שבע\core\.NetCoreHomework\bin\Debug\net6.0\Data\tasks.json

@@ -8,10 +8,10 @@ namespace myTask.Controllers{
 public class userController : ControllerBase
 {
     IUserService userService;
-    public userController(IUserService userService)
+    public userController(IUserService userService, int userId)
     {
         this.userService = userService;
-// this.userId=///
+        this.userId=userId;
 
     }
 
@@ -19,11 +19,11 @@ public class userController : ControllerBase
 //     public ActionResult<List<theTask>> GetAll()=>
 //         TaskService.GetAll();
     
-
-    [HttpGet("{id}")]
-    public ActionResult<User> Get(int id)
+    //שליפת משתמש לפי מזהה
+    [HttpGet("/api/user")]
+    public ActionResult<User> Get(int userId)
     {
-        var user = userService.Get(id);
+        var user = userService.Get(userId);
         if (user == null)
             return NotFound();
         return user;

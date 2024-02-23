@@ -5,8 +5,10 @@ namespace myTask.Interfaces
 {
     public interface IUserService
     {
-        User Get(int id); // Corrected capitalization of 'User'
-        void Add(User user); // Corrected capitalization of 'User'
+        //שליפת משתמש לפי מזהה
+        User Get(int userId);
+        List<User> GetAll();
+        void Add(User user); 
 
         void Delete(int id);
         int Count { get; } // Added missing semicolon

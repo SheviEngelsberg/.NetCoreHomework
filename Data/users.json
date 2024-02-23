@@ -1,14 +1,14 @@
 [
     {
-        "id":1,
-        "name":"sara"
+        "Id":1,
+        "Name":"sara"
     },
     {
-        "id":2,
-        "name":"shira"
+        "Id":2,
+        "Name":"shira"
     },
     {
-        "id":3,
-        "name":"shevi"
+        "Id":3,
+        "Name":"shevi"
     }
 ]

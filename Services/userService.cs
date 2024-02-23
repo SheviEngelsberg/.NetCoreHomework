@@ -33,10 +33,12 @@ public class userService : IUserService
     // public  List<theTask> GetAll() => tasks;
 
     //שליפת משתמש לפי ID
-    public  User Get(int id) 
+    public  User Get(int userId) 
     {
-        return users.FirstOrDefault(p => p.Id == id);
+        return users.FirstOrDefault(p => p.Id == userId);
     }
+    //שליפת כל המשתמשים הקיימים
+    public List<User> GetAll() => users;
 
     //הוספת משתמש
     public void Add(User newUser)

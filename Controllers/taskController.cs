@@ -7,91 +7,85 @@ namespace myTask.Controllers{
 [Route("[controller]")]
 public class taskController : ControllerBase
 {
+    int userId;
     ITaskService TaskService;
-    public taskController(ITaskService TaskService)
+    public taskController(ITaskService TaskService, int userId)
     {
         this.TaskService = TaskService;
-// this.userId=///
-
+        this.userId=userId;
     }
 
-    [HttpGet]
-    public ActionResult<List<TheTask>> GetAll()=>
-        TaskService.GetAll();
+    // [HttpGet]
+    // public ActionResult<List<TheTask>> GetAll()=>
+    //     TaskService.GetAll();
     
 
-    [HttpGet("{id}")]
-    public ActionResult<TheTask> Get(int id)
+    // [HttpGet("{id}")]
+    // public ActionResult<TheTask> Get(int id)
+    // {
+    //     var task = TaskService.Get(id);
+    //     if (task == null)
+    //         return NotFound();
+    //     return task;
+    // }
+
+   //מחזיר את כל המשימות של משתמש מסויים
+   [HttpGet("/api/todo")]
+    public ActionResult<List<TheTask>> Get()
     {
-        var task = TaskService.Get(id);
+        var tasks = TaskService.Get(this.userId).ToList();
+        if (tasks.Count == 0)
+        {
+            return NotFound();
+        }
+        
+        return tasks;
+    }
+
+    //שליפה של משימה מסויימת של משתמש מסויים
+    [HttpGet("/api/todo/{taskId}")]
+    public ActionResult<TheTask> Get(int taskId)
+    {
+        var task = TaskService.Get(taskId,this.userId);
         if (task == null)
             return NotFound();
         return task;
     }
-   
-    [HttpGet("task/{id}/user/{userName}")]
-    public ActionResult<TheTask> Get(int id, string userName)
-    {
-        var task = TaskService.Get(id,userName);
-        if (task == null)
-            return NotFound();
-        return task;
-    }
     
-    [HttpGet("allTasksOFuserName/{UserName}")]
-public ActionResult<List<TheTask>> Get(string UserName)
-{
-    var tasks = TaskService.Get(UserName).ToList();
-    if (tasks.Count == 0)
-    {
-        return NotFound();
-    }
     
-    return tasks;
-}
-
-    [HttpPost]
+    [HttpPost("/api/todo")]
     public IActionResult Create(TheTask task)
     {
-        TaskService.Add(task);
+        TaskService.Add(this.userId,task);
         return CreatedAtAction(nameof(Create), new {id=task.Id}, task);
 
 
     }
-    [HttpPost]
-    public IActionResult Create(string userName,TheTask task)
+    [HttpPut("/api/todo/{taskId}")]
+    public IActionResult Update(int taskId, TheTask task)
     {
-        TaskService.Add(userName,task);
-        return CreatedAtAction(nameof(Create), new {id=task.Id}, task);
+        if (taskId != task.Id)
+            return BadRequest();
 
+        var existingTask = TaskService.Get(taskId);
+        if (existingTask is null)
+            return  NotFound();
 
+        TaskService.Update(task);
+
+        return NoContent();
     }
-    [HttpPut("{id}")]
-    public IActionResult Update(int id, TheTask task)
-        {
-            if (id != task.Id)
-                return BadRequest();
 
-            var existingTask = TaskService.Get(id);
-            if (existingTask is null)
-                return  NotFound();
+    [HttpDelete("/api/todo/{taskId} ")]
+    public IActionResult Delete(int taskId)
+    {
+        var task = TaskService.Get(taskId);
+        if (task is null)
+            return  NotFound();
 
-            TaskService.Update(task);
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            var task = TaskService.Get(id);
-            if (task is null)
-                return  NotFound();
-
-            TaskService.Delete(id);
-
-            return Content(TaskService.Count.ToString());
-        }
+        TaskService.Delete(taskId,this.userId);
+        return Content(TaskService.Count.ToString());
+    }
     
 }
 

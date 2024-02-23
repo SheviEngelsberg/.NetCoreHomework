@@ -29,63 +29,48 @@ public class taskService : ITaskService
         File.WriteAllText(fileName, JsonSerializer.Serialize(tasks));
     }
 
-    // שליפת כל המשימות 
-    public  List<TheTask> GetAll() => tasks;
-
     //שליפת כל המשימות של משתמש מסויים
-    public List<TheTask> Get(string UserName)
+    public List<TheTask> Get(int userId)
     {
         List<TheTask> userTasks=new List<TheTask>();
-        userTasks=tasks.Where(t=>t.UserName==UserName).ToList();
+        userTasks=tasks.Where(t=>t.UserId==userId).ToList();
         return userTasks;
     }
 
-    // שליפה של משימה מסויימת לפי ID
-    public  TheTask Get(int id) 
-    {
-        return tasks.FirstOrDefault(p => p.Id == id);
-    }
-
     //שליפה של משימה מסויימת של משתמש מסויים
-    public TheTask Get(int id, string userName)
+    public TheTask Get(int taskId, int userId)
     {
-        return tasks.FirstOrDefault(t=> t.Id==id&&t.UserName==userName);
+        return tasks.FirstOrDefault(t=> t.Id==taskId&&t.UserId==userId);
     }
 
-    //הוספת משימה
-    public void Add(TheTask newTask)
+    //הוספת משימה מסויימת למשתמש מסויים
+    public void Add(int userId, TheTask newTask)
     {
+        newTask.UserId=userId;
         newTask.Id = tasks.Count()+1;
         tasks.Add(newTask);
         saveToFile();
     }
-    //הוספת משימה מסויימת למשתמש מסויים
-    public void Add(string userName, TheTask newTask)
-    {
-        newTask.UserName=userName;
-        newTask.Id = tasks.Count()+1;
-        tasks.Add(userName,newTask);
-        saveToFile();
-    }
-    // מחיקת משימה
-    public void Delete(int id)
-    {
-        var task = Get(id);
-        if (task is null)
-            return;
-
-        tasks.Remove(task);
-        saveToFile();
-    }
-
+   
     //עידכון משימה
     public void Update(TheTask task)
     {
-        var index = tasks.FindIndex(p => p.Id == task.Id);
+        var index = tasks.FindIndex(t => t.Id == task.Id);
         if (index == -1)
             return;
 
         tasks[index] = task;
+        saveToFile();
+    }
+
+    // מחיקת משימה
+    public void Delete(int taskId, int userId)
+    {
+        TheTask task = Get(taskId,userId);
+        if (task is null)
+            return;
+
+        tasks.Remove(task);
         saveToFile();
     }
 
