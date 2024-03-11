@@ -7,8 +7,8 @@ namespace myTask.Interfaces
     public interface IUserService
     {
         //שליפת משתמש לפי מזהה
-        User Get(int userId);
         List<User> GetAll();
+        User Get(int userId);
         void Add(User user); 
 
         void Delete(int id);

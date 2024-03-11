@@ -30,7 +30,7 @@ public class taskService : ITaskService
     }
 
     //שליפת כל המשימות של משתמש מסויים
-    public List<TheTask> Get(int userId)
+    public List<TheTask> GetAll(int userId)
     {
         List<TheTask> userTasks=new List<TheTask>();
         userTasks=tasks.Where(t=>t.UserId==userId).ToList();
@@ -51,6 +51,7 @@ public class taskService : ITaskService
         tasks.Add(newTask);
         saveToFile();
     }
+
    
     //עידכון משימה
     public void Update(TheTask task)
@@ -73,7 +74,10 @@ public class taskService : ITaskService
         tasks.Remove(task);
         saveToFile();
     }
-
+    public void DeleteByUserId(int userId)
+    {
+        tasks.RemoveAll(task => task.UserId == userId);
+    }
     //מספר המשימות
     public int Count => tasks.Count();
 }

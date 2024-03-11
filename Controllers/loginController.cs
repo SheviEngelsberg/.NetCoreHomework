@@ -4,9 +4,10 @@ using myTask.Models;
 using myTask.Interfaces;
 using myTask.Services;
 using System.Security.Claims;
+using System.Diagnostics;
 
 namespace myTask.Controllers{
-    [ApiController]
+[ApiController]
 [Route("[controller]")]
 public class loginController : ControllerBase
 {
@@ -16,8 +17,10 @@ public class loginController : ControllerBase
     public loginController(IUserService userService){
         this.userService=userService;
     }
+
+    [HttpPost("/api/login")]
     public ActionResult<string> login([FromBody] User user){
-        User myUser=this.userService.GetAll().FirstOrDefault(u=>u.Name==user.Name&&u.Password==user.Password);
+        User myUser=userService.GetAll().FirstOrDefault(u=>u.Name==user.Name&&u.Password==user.Password);
         if(myUser==null)
             return Unauthorized();
         var claims = new List<Claim>
@@ -25,7 +28,6 @@ public class loginController : ControllerBase
             new Claim("Type",myUser.Type),
             new Claim("Id",myUser.Id.ToString())
         };
-
         var token= tokenService.GetToken(claims);
         
         return new OkObjectResult(tokenService.WriteToken(token));

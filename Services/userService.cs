@@ -31,7 +31,6 @@ public class userService : IUserService
     {
         File.WriteAllText(fileName, JsonSerializer.Serialize(users));
     }
-    // public  List<theTask> GetAll() => tasks;
 
     //שליפת משתמש לפי ID
     public  User Get(int userId) 
@@ -65,15 +64,6 @@ public class userService : IUserService
         throw new NotImplementedException();
     }
 
-    // public void Update(theTask task)
-    //     {
-    //         var index = tasks.FindIndex(p => p.Id == task.Id);
-    //         if (index == -1)
-    //             return;
-
-    //         tasks[index] = task;
-    //         saveToFile();
-    //     }
     public int Count => users.Count();
 
     // private string GetDebuggerDisplay()

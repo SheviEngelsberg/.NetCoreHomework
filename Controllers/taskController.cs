@@ -1,52 +1,42 @@
 using Microsoft.AspNetCore.Mvc;
 using myTask.Models;
 using myTask.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace myTask.Controllers{
     [ApiController]
 [Route("[controller]")]
 public class taskController : ControllerBase
 {
-    int userId;
     ITaskService TaskService;
-    public taskController(ITaskService TaskService, int userId)
+    public taskController(ITaskService TaskService)
     {
         this.TaskService = TaskService;
-        this.userId=userId;
     }
 
-    // [HttpGet]
-    // public ActionResult<List<TheTask>> GetAll()=>
-    //     TaskService.GetAll();
     
-
-    // [HttpGet("{id}")]
-    // public ActionResult<TheTask> Get(int id)
-    // {
-    //     var task = TaskService.Get(id);
-    //     if (task == null)
-    //         return NotFound();
-    //     return task;
-    // }
-
    //מחזיר את כל המשימות של משתמש מסויים
    [HttpGet("/api/todo")]
-    public ActionResult<List<TheTask>> Get()
+   [Authorize(Policy="User"),Authorize(Policy="Admin")]
+    public ActionResult<List<TheTask>> GetAll()
     {
-        var tasks = TaskService.Get(this.userId).ToList();
-        if (tasks.Count == 0)
+        var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+        var tasks = TaskService.GetAll(userId);
+        if (tasks==null)
         {
             return NotFound();
         }
-        
-        return tasks;
+            return tasks;
     }
 
     //שליפה של משימה מסויימת של משתמש מסויים
     [HttpGet("/api/todo/{taskId}")]
+    [Authorize(Policy="User")]
+
     public ActionResult<TheTask> Get(int taskId)
     {
-        var task = TaskService.Get(taskId,this.userId);
+        var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+        var task = TaskService.Get(taskId,userId);
         if (task == null)
             return NotFound();
         return task;
@@ -54,20 +44,26 @@ public class taskController : ControllerBase
     
     
     [HttpPost("/api/todo")]
+    [Authorize(Policy="User")]
+
     public IActionResult Create(TheTask task)
     {
-        TaskService.Add(this.userId,task);
+        var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+        TaskService.Add(userId,task);
         return CreatedAtAction(nameof(Create), new {id=task.Id}, task);
 
 
     }
     [HttpPut("/api/todo/{taskId}")]
+    [Authorize(Policy="User")]
+
     public IActionResult Update(int taskId, TheTask task)
     {
+        var userId = Convert.ToInt32(User.FindFirst("Id").Value);
         if (taskId != task.Id)
             return BadRequest();
 
-        var existingTask = TaskService.Get(taskId);
+        var existingTask = TaskService.Get(taskId,userId);
         if (existingTask is null)
             return  NotFound();
 
@@ -77,13 +73,16 @@ public class taskController : ControllerBase
     }
 
     [HttpDelete("/api/todo/{taskId} ")]
+    [Authorize(Policy="User")]
+
     public IActionResult Delete(int taskId)
     {
-        var task = TaskService.Get(taskId);
+        var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+        var task = TaskService.Get(taskId,userId);
         if (task is null)
             return  NotFound();
 
-        TaskService.Delete(taskId,this.userId);
+        TaskService.Delete(taskId,userId);
         return Content(TaskService.Count.ToString());
     }
     

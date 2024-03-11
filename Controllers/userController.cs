@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using myTask.Models;
 using myTask.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using myTask.Services;
 
 namespace myTask.Controllers{
     [ApiController]
@@ -8,20 +10,26 @@ namespace myTask.Controllers{
 public class userController : ControllerBase
 {
     IUserService userService;
-    public userController(IUserService userService)
+    ITaskService taskService;
+    public userController(IUserService userService,ITaskService taskService)
     {
         this.userService = userService;
+        this.taskService = taskService;
 
     }
 
-//     [HttpGet]
-//     public ActionResult<List<theTask>> GetAll()=>
-//         TaskService.GetAll();
+     [HttpGet]
+     [Authorize(Policy="Admin")]
+     public ActionResult<List<User>> GetAll()=>
+         userService.GetAll();
     
     //שליפת משתמש לפי מזהה
     [HttpGet("/api/user")]
-    public ActionResult<User> Get(int userId)
+    [Authorize(Policy="User")]
+
+    public ActionResult<User> Get()
     {
+        var userId = Convert.ToInt32(User.FindFirst("Id").Value);
         var user = userService.Get(userId);
         if (user == null)
             return NotFound();
@@ -30,47 +38,32 @@ public class userController : ControllerBase
 
 
     [HttpPost("/api/user")]
+    [Authorize(Policy="Admin")]
+
     public IActionResult Create(User user)
     {
+        if(user is null)
+            return BadRequest("user is null");
         userService.Add(user);
         return CreatedAtAction(nameof(Create), new {id=user.Id}, user);
 
     }
-    
-//     [HttpPut("{id}")]
-//     public IActionResult Update(int id, theTask task)
-//         {
-//             if (id != task.Id)
-//                 return BadRequest();
 
-//             var existingTask = TaskService.Get(id);
-//             if (existingTask is null)
-//                 return  NotFound();
 
-//             TaskService.Update(task);
-
-//             return NoContent();
-//         }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete("/api/user/{userId}")]
+        [Authorize(Policy="Admin")]
+        public IActionResult Delete(int userId)
         {
-            var user = userService.Get(id);
+            var user = userService.Get(userId);
             if (user is null)
                 return  NotFound();
 
-            userService.Delete(id);
+            userService.Delete(userId);
+            taskService.DeleteByUserId(userId);
 
             return Content(userService.Count.ToString());
         }
 
-        //   [HttpPost("/api/login")]
-    // public IActionResult Create(User user)
-    // {
-    //     userService.Add(user);
-    //     return CreatedAtAction(nameof(Create), new {id=user.Id}, user);
-
-    // }
     
 }
 

@@ -39,10 +39,11 @@ namespace core_l1
                 cfg.RequireHttpsMetadata = false;
                 cfg.TokenValidationParameters = tokenService.GetTokenValidationParameters();
             });
+            string []str={"user","admin"};
             services.AddAuthorization(cfg =>
             {
                 cfg.AddPolicy("Admin", policy => policy.RequireClaim("Type", "admin"));
-                cfg.AddPolicy("User", policy => policy.RequireClaim("Type", "user"));
+                cfg.AddPolicy("User", policy => policy.RequireClaim("Type",str));
                
             });
             services.AddControllers();
