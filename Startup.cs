@@ -14,6 +14,8 @@ using Microsoft.OpenApi.Models;
 using myTask.Interfaces;
 using myTask.Services;
 using myTask.Middlewares;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace core_l1
 {
@@ -25,15 +27,43 @@ namespace core_l1
         }
 
         public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(cfg =>
+            {
+                cfg.RequireHttpsMetadata = false;
+                cfg.TokenValidationParameters = tokenService.GetTokenValidationParameters();
+            });
+            services.AddAuthorization(cfg =>
+            {
+                cfg.AddPolicy("Admin", policy => policy.RequireClaim("Type", "admin"));
+                cfg.AddPolicy("User", policy => policy.RequireClaim("Type", "user"));
+               
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "our tasks", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please enter JWT with Bearer into field",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                { new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer"}
+                    },
+                        new string[] {}
+                    }
+                });
             });
             services.AddSingleton<ITaskService, taskService>();
             services.AddSingleton<IUserService, userService>();

@@ -1,14 +1,22 @@
 [
     {
-        "id":1,
-        "name":"sara"
+        "Id":1,
+        "Name":"sara",
+        "Password":"1234",
+        "Type":"admin"
     },
     {
-        "id":2,
-        "name":"shira"
+        "Id":2,
+        "Name":"shira",
+        "Password":"12345",
+        "Type":"user"
+
     },
     {
-        "id":3,
-        "name":"shevi"
+        "Id":3,
+        "Name":"shevi",
+        "Password":"123456",
+        "Type":"user"
+
     }
 ]

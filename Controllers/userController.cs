@@ -8,10 +8,9 @@ namespace myTask.Controllers{
 public class userController : ControllerBase
 {
     IUserService userService;
-    public userController(IUserService userService, int userId)
+    public userController(IUserService userService)
     {
         this.userService = userService;
-        this.userId=userId;
 
     }
 
@@ -30,7 +29,7 @@ public class userController : ControllerBase
     }
 
 
-    [HttpPost]
+    [HttpPost("/api/user")]
     public IActionResult Create(User user)
     {
         userService.Add(user);
@@ -64,6 +63,14 @@ public class userController : ControllerBase
 
             return Content(userService.Count.ToString());
         }
+
+        //   [HttpPost("/api/login")]
+    // public IActionResult Create(User user)
+    // {
+    //     userService.Add(user);
+    //     return CreatedAtAction(nameof(Create), new {id=user.Id}, user);
+
+    // }
     
 }
 

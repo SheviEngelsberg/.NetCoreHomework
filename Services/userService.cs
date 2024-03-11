@@ -5,6 +5,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Diagnostics;
+using System.Security.Claims;
 
 public class userService : IUserService
 {
@@ -57,6 +58,11 @@ public class userService : IUserService
 
         users.Remove(user);
         saveToFile();
+    }
+
+    public object GetToken(List<Claim> claims)
+    {
+        throw new NotImplementedException();
     }
 
     // public void Update(theTask task)
