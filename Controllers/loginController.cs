@@ -25,9 +25,11 @@ public class loginController : ControllerBase
             return Unauthorized();
         var claims = new List<Claim>
         {
-            new Claim("Type",myUser.Type),
+            new Claim("Type","User"),
             new Claim("Id",myUser.Id.ToString())
         };
+        if(myUser.Type=="admin")
+            claims.Add(new Claim("Type","Admin"));
         var token= tokenService.GetToken(claims);
         
         return new OkObjectResult(tokenService.WriteToken(token));

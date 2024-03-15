@@ -2,10 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using myTask.Models;
 using myTask.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace myTask.Controllers{
     [ApiController]
-[Route("[controller]")]
+[Route("/api/todo")]
 public class taskController : ControllerBase
 {
     ITaskService TaskService;
@@ -16,8 +17,8 @@ public class taskController : ControllerBase
 
     
    //מחזיר את כל המשימות של משתמש מסויים
-   [HttpGet("/api/todo")]
-   [Authorize(Policy="User"),Authorize(Policy="Admin")]
+   [HttpGet]
+   [Authorize(Policy="User")]
     public ActionResult<List<TheTask>> GetAll()
     {
         var userId = Convert.ToInt32(User.FindFirst("Id").Value);
@@ -30,7 +31,7 @@ public class taskController : ControllerBase
     }
 
     //שליפה של משימה מסויימת של משתמש מסויים
-    [HttpGet("/api/todo/{taskId}")]
+    [HttpGet("/{taskId}")]
     [Authorize(Policy="User")]
 
     public ActionResult<TheTask> Get(int taskId)
@@ -43,22 +44,24 @@ public class taskController : ControllerBase
     }
     
     
-    [HttpPost("/api/todo")]
+    [HttpPost]
     [Authorize(Policy="User")]
 
     public IActionResult Create(TheTask task)
     {
         var userId = Convert.ToInt32(User.FindFirst("Id").Value);
         TaskService.Add(userId,task);
+        task.UserId=userId;
         return CreatedAtAction(nameof(Create), new {id=task.Id}, task);
 
 
     }
-    [HttpPut("/api/todo/{taskId}")]
+    [HttpPut("/{taskId}")]
     [Authorize(Policy="User")]
 
     public IActionResult Update(int taskId, TheTask task)
     {
+        
         var userId = Convert.ToInt32(User.FindFirst("Id").Value);
         if (taskId != task.Id)
             return BadRequest();
@@ -68,22 +71,23 @@ public class taskController : ControllerBase
             return  NotFound();
 
         TaskService.Update(task);
-
+        task.UserId=userId;
+        
         return NoContent();
     }
 
-    [HttpDelete("/api/todo/{taskId} ")]
+    [HttpDelete("/{taskId}")]
     [Authorize(Policy="User")]
-
     public IActionResult Delete(int taskId)
     {
+        Console.WriteLine("llll"+taskId);
         var userId = Convert.ToInt32(User.FindFirst("Id").Value);
         var task = TaskService.Get(taskId,userId);
         if (task is null)
             return  NotFound();
 
         TaskService.Delete(taskId,userId);
-        return Content(TaskService.Count.ToString());
+        return NoContent();
     }
     
 }

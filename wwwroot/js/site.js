@@ -1,6 +1,7 @@
-const uri = '/task';
+const uri = '/api/todo';
 let tasks = [];
-
+// https://localhost:7149/api/todo
+const token=sessionStorage.getItem("token");
 function getItems() {
     fetch(uri)
         .then(response => response.json())
@@ -20,7 +21,8 @@ function addItem() {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authentication':"Bearer "+token
             },
             body: JSON.stringify(item)
         })
