@@ -27,7 +27,6 @@ namespace core_l1
         }
 
         public IConfiguration Configuration { get; }
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(options =>
@@ -39,7 +38,6 @@ namespace core_l1
                 cfg.RequireHttpsMetadata = false;
                 cfg.TokenValidationParameters = tokenService.GetTokenValidationParameters();
             });
-            // string []str={"user","admin"};
             services.AddAuthorization(cfg =>
             {
                 cfg.AddPolicy("Admin", policy => policy.RequireClaim("Type", "Admin"));
@@ -72,10 +70,9 @@ namespace core_l1
             
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // app.UseMyMiddleExtensions("file.log");
+            app.UseMyMiddleExtensions("file.log");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -83,12 +80,8 @@ namespace core_l1
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "core_l1 v1"));
             }
 
-            //app.UseHttpsRedirection();
-            /*js*/
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            /*js (remove "launchUrl" from Properties\launchSettings.json*/
-
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

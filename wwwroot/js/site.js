@@ -1,6 +1,5 @@
 const uri = '/api/todo';
 let tasks = [];
-// https://localhost:7149/api/todo
 const token=sessionStorage.getItem("token");
 function getItems() {
     fetch(uri)

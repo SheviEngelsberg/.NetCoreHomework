@@ -17,8 +17,11 @@ namespace myTask.Middlewares{
         var sw = new Stopwatch();
         sw.Start();
         await next(c);
-        WriteLogToFile($"{c.Request.Path}.{c.Request.Method} took {sw.ElapsedMilliseconds}ms."
-            + $" User: {c.User?.FindFirst("userId")?.Value ?? "unknown"}");     
+//         יש לכתוב כל בקשה לקובץ יומן, כולל תאריך ושעה התחלה, שם של
+// בקר ופעולה, שם המשתמש המחובר אם קיים, ומשך הזמן של
+// פעולה באלפיות שניות.
+        WriteLogToFile($"{DateTime.Now} {c.Request.Path}.{c.Request.Method} took {sw.ElapsedMilliseconds}ms."
+            + $" User: {c.User?.FindFirst("Id")?.Value ?? "unknown"}");     
     }    
 
    private void WriteLogToFile(string logMessage)
