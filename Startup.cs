@@ -72,7 +72,7 @@ namespace core_l1
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseMyMiddleExtensions("file.log");
+            // app.UseMyMiddleExtensions("file.log");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

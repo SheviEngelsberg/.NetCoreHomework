@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/login.js" asp-append-version="true"></script>
-    <title>Document</title>
+    <title>login</title>
 </head>
 <body>
     <h1>Login</h1>
-    <form action="javascript:void(0);" method="POST" >
+    <form action="javascript:void(0);" method="POST" onsubmit="login()">
         <input id="name" type="text" >
         <input id="password" type="password">
-        <a href="./html/home.html"><button type="button" onclick=login()>Login</button></a>
+       <button type="button">Login</button>
     </form>
-    
+    <div id="g_id_onload"
+    data-client_id="258181601351-g9efo5ndd4q3h5mkmarjc96gtmhtjp4a.apps.googleusercontent.com"
+    data-callback="handleCredentialResponse">
+    </div>
+<div class="g_id_signin" data-type="standard"></div>
 </body>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </html>

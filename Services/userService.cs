@@ -43,11 +43,19 @@ public class userService : IUserService
     //הוספת משתמש
     public void Add(User newUser)
     {
-        newUser.Id = users.Count()+1;
+        newUser.Id = GetNextId();
         users.Add(newUser);
         saveToFile();
     }
-    
+    public void Update(User user)
+    {
+        var index = users.FindIndex(u => u.Id == user.Id);
+        if (index == -1)
+            return;
+
+        users[index] = user;
+        saveToFile();
+    }
     //מחיקת משתמש לפי ID
     public void Delete(int userId)
     {
@@ -64,6 +72,7 @@ public class userService : IUserService
         throw new NotImplementedException();
     }
 
+    public int GetNextId()=>users.Max(user=>user.Id)+1;
     public int Count => users.Count();
 
     // private string GetDebuggerDisplay()

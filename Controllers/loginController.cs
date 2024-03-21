@@ -35,9 +35,7 @@ public class loginController : ControllerBase
         return new OkObjectResult(tokenService.WriteToken(token));
 
 
-            
-    } 
-}
-
+         }   
+    }
 }
 

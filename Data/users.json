@@ -1,1 +1,37 @@
-[{"Id":1,"Name":"sara","Password":"1234","Type":"admin"},{"Id":3,"Name":"shevi","Password":"123456","Type":"user"},{"Id":4,"Name":"dvora","Password":"1234567","Type":"user"}]
+[
+    {
+        "Id": 3,
+        "Name": "shevi55",
+        "Password": "123456",
+        "Email":"dddd@gmail.com",
+        "Type": "user"
+    },
+    {
+        "Id": 5,
+        "Name": "gggg",
+        "Password": "123",
+        "Email":"hh@gmail.com",
+        "Type": "user"
+    },
+    {
+        "Id": 6,
+        "Name": "sara",
+        "Password": "1234",
+        "Email":"diiid@gmail.com",
+        "Type": "admin"
+    },
+    {
+        "Id": 7,
+        "Name": "sssssss",
+        "Password": "1234888",
+        "Email":"d88dd@gmail.com",
+        "Type": "user"
+    },
+    {
+        "Id": 8,
+        "Name": "שבי אנגלסברג",
+        "Password": "115489783830389144909",
+        "Email":"d88dd@gmail.com",
+        "Type": "user"
+    }
+]
