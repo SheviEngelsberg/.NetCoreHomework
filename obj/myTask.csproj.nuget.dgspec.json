@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\myTask.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\myTask.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\obj\\",
+=======
+    "C:\\Users\\USER\\Desktop\\core\\חדש\\.NetCoreHomework\\myTask.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\USER\\Desktop\\core\\חדש\\.NetCoreHomework\\myTask.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\USER\\Desktop\\core\\חדש\\.NetCoreHomework\\myTask.csproj",
+        "projectName": "myTask",
+        "projectPath": "C:\\Users\\USER\\Desktop\\core\\חדש\\.NetCoreHomework\\myTask.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\Desktop\\core\\חדש\\.NetCoreHomework\\obj\\",
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

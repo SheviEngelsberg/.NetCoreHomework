@@ -688,6 +688,7 @@
 21/03/2024 12:20:50 /api/user.PUT took 10ms. User: 3
 21/03/2024 12:21:08 /api/user.PUT took 4ms. User: 3
 21/03/2024 12:21:18 /api/user.PUT took 4ms. User: 3
+<<<<<<< HEAD
 21/03/2024 13:44:28 /api/login.POST took 485ms. User: unknown
 21/03/2024 13:44:29 /Admin.GET took 268ms. User: 6
 21/03/2024 13:44:29 /api/todo.GET took 271ms. User: 6
@@ -887,3 +888,5 @@
 22/03/2024 00:31:39 /api/login.POST took 147ms. User: unknown
 22/03/2024 00:31:39 /api/todo.GET took 37ms. User: unknown
 22/03/2024 00:31:39 /html/html/home.html.GET took 2ms. User: unknown
+=======
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c

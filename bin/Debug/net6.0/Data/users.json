@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "Id": 3,
@@ -35,3 +36,6 @@
         "Type": "user"
     }
 ]
+=======
+[{"Id":3,"Name":"shevi","Password":"123456","Type":"user"},{"Id":5,"Name":"gggg","Password":"123","Type":"user"},{"Id":6,"Name":"sara","Password":"1234","Type":"admin"},{"Id":7,"Name":"sssssss","Password":"1234888","Type":"user"}]
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c

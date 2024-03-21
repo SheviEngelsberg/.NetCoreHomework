@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const loginUrl="/api/login"
 function login() {
 
@@ -5,6 +6,47 @@ function login() {
     const password = document.getElementById('password').value.trim();
 
     fetch(loginUrl, {
+=======
+// const uri="/api/login"
+// function login(){
+
+//     const name= document.getElementById('name').value.trim();
+//     const password= document.getElementById('password').value.trim();
+
+//     fetch(uri,{
+//         method: 'POST',
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({name:name,password:password})
+//     })
+//     .then(response =>response.text())
+//     .then(data=>{
+//         saveToken(data);
+//     })
+//     .catch(error => console.error('Unable to save token.', error));
+// }
+
+// function saveToken(token) {
+//     sessionStorage.setItem("token",token);
+//     window.location="html/home.html";
+// }
+const uri = "/api/login"
+
+
+// if (localStorage.getItem('token')) { // != null) {
+//     console.log(localStorage.getItem('token'));
+//     window.location = "html/home.html";
+// }
+
+function login() {
+
+    const name = document.getElementById('name').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    fetch(uri, {
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -19,6 +61,7 @@ function login() {
         })
         .then(response => response.json())
         .then(data => {
+<<<<<<< HEAD
             saveToken(data);
         })
         .catch(error => console.error('Unable to save token.', error));
@@ -72,4 +115,15 @@ function saveToken(token) {
     localStorage.setItem("token", token);
     window.location = "html/home.html";
 
+=======
+            console.log(data);
+            saveToken(data);
+        })
+        .catch(error => console.error('Unable to save token.', error));
+}
+
+function saveToken(token) {
+    localStorage.setItem("token", token);
+    window.location = "html/home.html";
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
 }

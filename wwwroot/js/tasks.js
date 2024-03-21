@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const todoUrl = '/api/todo';
+=======
+const url = '/api/todo';
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
 const userUrl= '/api/user'
 let tasks = [];
 const token = localStorage.getItem("token");
@@ -9,7 +13,11 @@ IsAdmin();
 
 function getItems() {
 
+<<<<<<< HEAD
     fetch(todoUrl, {
+=======
+    fetch(url, {
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -36,12 +44,20 @@ function addItem() {
     const item = {
        id: 0,
        name: addNameTextbox.value.trim(),
+<<<<<<< HEAD
        isDone: false,
+=======
+      isDone: false,
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
        userId: 0
 
     };
 
+<<<<<<< HEAD
     fetch(todoUrl, {
+=======
+    fetch(url, {
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -61,7 +77,11 @@ function addItem() {
 }
 
 function deleteItem(id) {
+<<<<<<< HEAD
     fetch(`${todoUrl}/${id}`, {
+=======
+    fetch(`${url}/${id}`, {
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
@@ -90,7 +110,11 @@ function updateItem() {
         UserId: 0
 
     };
+<<<<<<< HEAD
     fetch(`${todoUrl}/${itemId}`, {
+=======
+    fetch(`${url}/${itemId}`, {
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -185,6 +209,7 @@ function IsAdmin() {
 }
 
 function updateUser() {
+<<<<<<< HEAD
     // const userId=document.getElementById('editUser-id');
     // const typeuser=document.getElementById('editUser-type');
     const user = {
@@ -192,6 +217,15 @@ function updateUser() {
         Name: document.getElementById('editUser-name').value.trim(),
         Password: document.getElementById('editUser-password').value.trim(),
         Type: null
+=======
+    const userId=document.getElementById('editUser-id');
+    const typeuser=document.getElementById('editUser-type');
+    const user = {
+        Id:1,
+        Name: document.getElementById('editUser-name').value.trim(),
+        Password: document.getElementById('editUser-password').value.trim(),
+        Type: 'admin'
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
 
     };
     fetch(userUrl, {
@@ -210,9 +244,22 @@ function updateUser() {
 
 function closeeditUserInput(){
     document.getElementById('editUserForm').hidden = true;
+<<<<<<< HEAD
+=======
+    
+    // style.display = 'none';
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
 }
 
    function _displayUserDetails() {
         const UserDetails=document.getElementById('editUserForm');
         UserDetails.hidden=false;
+<<<<<<< HEAD
+=======
+    // const user = users.find(u => u.id === id);
+    // document.getElementById('edit-name').value = item.name;
+    // document.getElementById('edit-id').value = item.id;
+    // document.getElementById('edit-isDone').checked = item.isDone;
+    // document.getElementById('editForm').style.display = 'block';
+>>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
 }
