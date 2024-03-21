@@ -10,7 +10,7 @@ namespace myTask.Interfaces
         List<User> GetAll();
         User Get(int userId);
         void Add(User user); 
-
+        void Update(User user);
         void Delete(int id);
         object GetToken(List<Claim> claims);
 

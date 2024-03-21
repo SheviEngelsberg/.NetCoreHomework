@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XGPDw4+T670TpvFkoK0nnQi+HIGUsjtzHf6lC+cfmCE=",
+  "Hash": "Df6rCWEcF3UoPilRVcS+cqKns7AiG3bFADG4f/Lt77U=",
   "Source": "myTask",
   "BasePath": "_content/myTask",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "myTask\\wwwroot",
       "Source": "myTask",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\css\\site.css",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\html\\home.html",
+      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\html\\home.html",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "RelativePath": "html/home.html",
       "AssetKind": "All",
@@ -51,10 +51,27 @@
       "OriginalItemSpec": "wwwroot\\html\\home.html"
     },
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\html\\users.html",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
+      "BasePath": "_content/myTask",
+      "RelativePath": "html/users.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\html\\users.html"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\index.html",
+      "SourceId": "myTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -68,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\js\\login.js",
+      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\js\\login.js",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
       "RelativePath": "js/login.js",
       "AssetKind": "All",
@@ -85,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\js\\tasks.js",
       "SourceId": "myTask",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-16\\.NetCoreHomework\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
       "BasePath": "_content/myTask",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/tasks.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +116,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\js\\tasks.js"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\js\\users.js",
+      "SourceId": "myTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\core\\2024-03-20\\.NetCoreHomework\\wwwroot\\",
+      "BasePath": "_content/myTask",
+      "RelativePath": "js/users.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\users.js"
     }
   ]
 }

@@ -12,11 +12,6 @@ namespace myTask.Interfaces
         void Update(TheTask myTask);
         void Delete(int taskId,int userId);
         void DeleteByUserId(int userId);
-        // ActionResult<List<TheTask>> GetAll(int v);
-        // ActionResult<TheTask> Get(int taskId, string id);
-        // void Add(string id, TheTask task);
-        // void Delete(int taskId, string id);
-        // void Delete(int taskId, int userId);
         int Count {get;}
     }
 }

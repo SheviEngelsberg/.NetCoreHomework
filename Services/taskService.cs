@@ -47,7 +47,7 @@ public class taskService : ITaskService
     public void Add(int userId, TheTask newTask)
     {
         newTask.UserId=userId;
-        newTask.Id = tasks.Count()+1;
+        newTask.Id = GetNextId();
         tasks.Add(newTask);
         saveToFile();
     }
@@ -78,6 +78,8 @@ public class taskService : ITaskService
     {
         tasks.RemoveAll(task => task.UserId == userId);
     }
+
+    public int GetNextId()=>tasks.Max(task=>task.Id)+1;
     //מספר המשימות
     public int Count => tasks.Count();
 }
