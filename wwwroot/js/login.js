@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-const loginUrl="/api/login"
-function login() {
-
-    const name = document.getElementById('name').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    fetch(loginUrl, {
-=======
-// const uri="/api/login"
+// const loginUrl="/api/login"
 // function login(){
 
 //     const name= document.getElementById('name').value.trim();
@@ -32,7 +23,7 @@ function login() {
 //     sessionStorage.setItem("token",token);
 //     window.location="html/home.html";
 // }
-const uri = "/api/login"
+// const uri = "/api/login"
 
 
 // if (localStorage.getItem('token')) { // != null) {
@@ -45,8 +36,7 @@ function login() {
     const name = document.getElementById('name').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    fetch(uri, {
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
+    fetch(loginUrl, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -61,7 +51,6 @@ function login() {
         })
         .then(response => response.json())
         .then(data => {
-<<<<<<< HEAD
             saveToken(data);
         })
         .catch(error => console.error('Unable to save token.', error));
@@ -115,15 +104,4 @@ function saveToken(token) {
     localStorage.setItem("token", token);
     window.location = "html/home.html";
 
-=======
-            console.log(data);
-            saveToken(data);
-        })
-        .catch(error => console.error('Unable to save token.', error));
-}
-
-function saveToken(token) {
-    localStorage.setItem("token", token);
-    window.location = "html/home.html";
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
 }

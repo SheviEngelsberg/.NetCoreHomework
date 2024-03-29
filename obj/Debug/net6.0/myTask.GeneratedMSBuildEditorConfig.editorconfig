@@ -8,17 +8,9 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = myTask
 build_property.RootNamespace = myTask
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\USER\Desktop\core\2024-03-20\.NetCoreHomework\
+build_property.ProjectDir = C:\Users\USER\Desktop\core\2024-03-30\.NetCoreHomework\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\core\2024-03-20\.NetCoreHomework
-=======
-build_property.ProjectDir = C:\Users\USER\Desktop\core\חדש\.NetCoreHomework\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\core\חדש\.NetCoreHomework
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
+build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\core\2024-03-30\.NetCoreHomework
 build_property._RazorSourceGeneratorDebug = 
