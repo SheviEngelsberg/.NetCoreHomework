@@ -64,10 +64,12 @@ namespace core_l1
                     }
                 });
             });
-            services.AddSingleton<ITaskService, taskService>();
-            services.AddSingleton<IUserService, userService>();
+            // services.AddSingleton<ITaskService, taskService>();
+            // services.AddSingleton<IUserService, userService>();
+            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+            services.AddTask();
+            services.AddUser();
 
-            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

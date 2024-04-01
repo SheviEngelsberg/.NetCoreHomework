@@ -5,6 +5,11 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Diagnostics;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+
 
 public class taskService : ITaskService
 {
@@ -82,4 +87,11 @@ public class taskService : ITaskService
     public int GetNextId()=>tasks.Max(task=>task.Id)+1;
     //מספר המשימות
     public int Count => tasks.Count();
+
 }
+    public static class TaskUtils{
+        public static void AddTask(this IServiceCollection service)
+        {
+            service.AddSingleton<ITaskService,taskService>();
+        }
+    }

@@ -11,19 +11,19 @@ namespace myTask.Controllers
     public class taskController : ControllerBase
     {
         ITaskService TaskService;
-        public taskController(ITaskService TaskService)
+        readonly int UserId;
+        public taskController(ITaskService TaskService,IHttpContextAccessor httpContextAccessor)
         {
             this.TaskService = TaskService;
+            this.UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value);
         }
-
 
         //מחזיר את כל המשימות של משתמש מסויים
         [HttpGet]
         [Authorize(Policy = "User")]
         public ActionResult<List<TheTask>> GetAll()
         {
-            var userId = Convert.ToInt32(User.FindFirst("Id").Value);
-            var tasks = TaskService.GetAll(userId);
+            var tasks = TaskService.GetAll(UserId);
             if (tasks == null)
             {
                 return NotFound();
@@ -38,8 +38,7 @@ namespace myTask.Controllers
 
         public ActionResult<TheTask> Get(int taskId)
         {
-            var userId = Convert.ToInt32(User.FindFirst("Id").Value);
-            var task = TaskService.Get(taskId, userId);
+            var task = TaskService.Get(taskId, UserId);
             if (task == null)
                 return NotFound();
             return task;
@@ -51,9 +50,8 @@ namespace myTask.Controllers
 
         public IActionResult Create(TheTask task)
         {
-            var userId = Convert.ToInt32(User.FindFirst("Id").Value);
-            TaskService.Add(userId, task);
-            task.UserId = userId;
+            TaskService.Add(UserId, task);
+            task.UserId = UserId;
             return CreatedAtAction(nameof(Create), new { id = task.Id }, task);
 
 
@@ -65,16 +63,15 @@ namespace myTask.Controllers
         public IActionResult Update(int taskId, TheTask task)
         {
 
-            var userId = Convert.ToInt32(User.FindFirst("Id").Value);
             if (taskId != task.Id)
                 return BadRequest();
 
-            var existingTask = TaskService.Get(taskId, userId);
+            var existingTask = TaskService.Get(taskId, UserId);
             if (existingTask is null)
                 return NotFound();
 
             TaskService.Update(task);
-            task.UserId = userId;
+            task.UserId = UserId;
 
             return NoContent();
         }
@@ -84,12 +81,11 @@ namespace myTask.Controllers
         [Authorize(Policy = "User")]
         public IActionResult Delete(int taskId)
         {
-            var userId = Convert.ToInt32(User.FindFirst("Id").Value);
-            var task = TaskService.Get(taskId, userId);
+            var task = TaskService.Get(taskId, UserId);
             if (task is null)
                 return NotFound();
 
-            TaskService.Delete(taskId, userId);
+            TaskService.Delete(taskId, UserId);
             return NoContent();
         }
         [Route("/Admin")]

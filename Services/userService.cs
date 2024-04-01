@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Diagnostics;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 public class userService : IUserService
 {
@@ -79,6 +82,12 @@ public class userService : IUserService
     // {
     //     return ToString();
     // }
+
 }
+    public static class UserUtils{
+        public static void AddUser(this IServiceCollection service){
+            service.AddSingleton<IUserService,userService>();
+        }
+    }
 
 

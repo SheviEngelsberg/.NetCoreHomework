@@ -14,14 +14,15 @@ public class userController : ControllerBase
 {
     IUserService userService;
     ITaskService taskService;
+    readonly int UserId;
 
-        public object UserService { get; private set; }
+    // public object UserService { get; private set; }
 
-        public userController(IUserService userService,ITaskService taskService)
+    public userController(IUserService userService,ITaskService taskService, IHttpContextAccessor httpContextAccessor)
     {
         this.userService = userService;
         this.taskService = taskService;
-
+        this.UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value);
     }
 
      [HttpGet("/api/Allusers")]
@@ -35,8 +36,8 @@ public class userController : ControllerBase
 
     public ActionResult<User> Get()
     {
-        var userId = Convert.ToInt32(User.FindFirst("Id").Value);
-        var user = userService.Get(userId);
+        // var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+        var user = userService.Get(UserId);
         if (user == null)
             return NotFound();
         return user;
@@ -74,13 +75,13 @@ public class userController : ControllerBase
 
         public IActionResult Update([FromBody]User user)
         {
-            var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+            // var userId = Convert.ToInt32(User.FindFirst("Id").Value);
             var userType = User.FindFirst("Type").Value.ToLower();
-            Console.WriteLine(userType);
-            var existingUser = userService.Get(userId);
+            // Console.WriteLine(userType);
+            var existingUser = userService.Get(UserId);
             if (existingUser is null)
                 return NotFound();
-            user.Id = userId;
+            user.Id = UserId;
             user.Type=userType;
             userService.Update(user);
 
