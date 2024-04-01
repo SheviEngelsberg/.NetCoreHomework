@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 const AllusersUrl="/api/Allusers";
 const userUrl="/api/user"
-=======
-const uri="/api/Allusers";
-const url="/api/user"
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
 users=[];
 const token = localStorage.getItem("token");
 const Authorization = "Bearer " + token;
@@ -13,11 +8,9 @@ getUsersList();
 
 function getUsersList()
 {
-<<<<<<< HEAD
         fetch(AllusersUrl, {
-=======
-        fetch(uri, {
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
+
+
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
@@ -82,11 +75,7 @@ function getUsersList()
     }
 
     function deleteUser(id) {
-<<<<<<< HEAD
         fetch(`${userUrl}/${id}`, {
-=======
-        fetch(`${url}/${id}`, {
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
@@ -109,11 +98,9 @@ function getUsersList()
     
         };
     
-<<<<<<< HEAD
         fetch(userUrl, {
-=======
-        fetch(url, {
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
+
+        
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

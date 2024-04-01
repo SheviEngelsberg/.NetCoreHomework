@@ -74,14 +74,8 @@ public class userController : ControllerBase
 
         public IActionResult Update([FromBody]User user)
         {
-<<<<<<< HEAD
-            var userId = Convert.ToInt32(User.FindFirst("Id").Value);
-            var userType = User.FindAll("Type").Select(x => x.Value.ToLower()).Skip(1).FirstOrDefault() ?? User.FindFirst("Type").Value.ToLower();
-=======
-   Console.WriteLine("lll");
             var userId = Convert.ToInt32(User.FindFirst("Id").Value);
             var userType = User.FindFirst("Type").Value.ToLower();
->>>>>>> f60610f55743aa05ae11f63d39f1e7b599d52a3c
             Console.WriteLine(userType);
             var existingUser = userService.Get(userId);
             if (existingUser is null)

@@ -1,4 +1,4 @@
-// const loginUrl="/api/login"
+const loginUrl="/api/login"
 // function login(){
 
 //     const name= document.getElementById('name').value.trim();

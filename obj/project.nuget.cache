@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QRnhFyerRGgoCKHOKj1lnxUq6WuLdRxSsR9aEFACfWsUkSnCUlX2kc0acnMLHsigWv/XlFnAsyKbhqN70fFemA==",
+  "dgSpecHash": "xbD6Mj74pGR4JR/JFao2w3DMqKExYY/n3B249YIiPBJJP6RLlQNrh0jHhaC4B4jSR2j+vHj3q5npfqlQ5xd4gA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\core\\2024-03-30\\.NetCoreHomework\\myTask.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\שבי\\.NetCoreHomework\\myTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.4\\microsoft.aspnetcore.authentication.jwtbearer.5.0.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -27,12 +27,5 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\USER\\Desktop\\core\\2024-03-30\\.NetCoreHomework\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
