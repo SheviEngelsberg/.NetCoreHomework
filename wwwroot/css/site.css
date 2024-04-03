@@ -1,33 +1,44 @@
-/* General styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-}
-
-h1 {
     color: #333;
 }
 
-form {
-    margin-bottom: 20px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="submit"],
-button {
-    margin: 5px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+h1 {
+    text-align: center;
+    color: #4e6bff;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #ff7e67;
     color: white;
+    padding: 10px 20px;
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff523f;
+}
+
+form {
+    margin-top: 20px;
+}
+
+
+
+input[type="submit"] {
+    background-color: #4e6bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #3248ff;
 }
 
 table {
@@ -35,28 +46,48 @@ table {
     border-collapse: collapse;
 }
 
-th,
-td {
-    padding: 10px;
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
 }
 
-/* Specific styling for Task CRUD page */
-#editUserForm,
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: #4e6bff;
+}
+
+a:hover {
+    color: #3248ff;
+}
+
+
+input[type='submit'],
+button,
+[aria-label] {
+    cursor: pointer;
+}
+
 #editForm {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px 0;
+    display: none;
 }
 
-/* Specific styling for UserList page */
-#addForm {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px 0;
+table {
+    font-family: Arial, sans-serif;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #f8f8f8;
+    padding: 5px;
+}
+
+td {
+    border: 1px solid;
+    padding: 5px;
 }
