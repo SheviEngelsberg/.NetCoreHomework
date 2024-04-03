@@ -1,9 +1,9 @@
 
 const loginUrl = "/api/login"
 
-// if(localStorage.getItem('token')){
-//     window.location.href="tasks.html";
-// }
+if(localStorage.getItem('token')){
+    window.location.href="tasks.html";
+}
 function getDetailsForLogin() {
     const name = document.getElementById('name').value.trim();
     const password = document.getElementById('password').value.trim();

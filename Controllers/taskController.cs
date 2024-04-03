@@ -12,15 +12,15 @@ namespace myTask.Controllers
     {
         ITaskService TaskService;
         readonly int UserId;
-        public taskController(ITaskService TaskService,IHttpContextAccessor httpContextAccessor)
+        public taskController(ITaskService TaskService, IHttpContextAccessor httpContextAccessor)
         {
             this.TaskService = TaskService;
             this.UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value);
         }
 
-        //מחזיר את כל המשימות של משתמש מסויים
+        //Get all user's to-do items 
         [HttpGet]
-        [Authorize(Policy = "User")]
+        // [Authorize(Policy = "User")]
         public ActionResult<List<TheTask>> GetAll()
         {
             var tasks = TaskService.GetAll(UserId);
@@ -31,7 +31,7 @@ namespace myTask.Controllers
             return tasks;
         }
 
-        //שליפה של משימה מסויימת של משתמש מסויים
+        //Get a user's to-do item by ID     
         [HttpGet]
         [Route("{taskId}")]
         [Authorize(Policy = "User")]
@@ -44,18 +44,17 @@ namespace myTask.Controllers
             return task;
         }
 
-
+        //Add a new to-do item to user
         [HttpPost]
         [Authorize(Policy = "User")]
-
         public IActionResult Create(TheTask task)
         {
             TaskService.Add(UserId, task);
             task.UserId = UserId;
             return CreatedAtAction(nameof(Create), new { id = task.Id }, task);
-
-
         }
+
+        
         [HttpPut]
         [Route("{taskId}")]
         [Authorize(Policy = "User")]
@@ -90,9 +89,10 @@ namespace myTask.Controllers
         }
         [Route("/Admin")]
         [HttpGet]
-        [Authorize(Policy="Admin")]
+        [Authorize(Policy = "Admin")]
         public ActionResult<string> IsAdmin()
         {
-            return  new OkObjectResult("true");
+            return new OkObjectResult("true");
         }
-    }}
+    }
+}
