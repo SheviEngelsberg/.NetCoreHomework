@@ -1,6 +1,6 @@
 const todoUrl = '/api/todo';
 
-const userUrl= '/api/user'
+const userUrl = '/api/user'
 let tasks = [];
 const token = localStorage.getItem("token");
 const Authorization = "Bearer " + token;
@@ -12,14 +12,14 @@ function getItems() {
 
     fetch(todoUrl, {
 
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
 
-        })
+    })
         .then(response => {
             if (response.status != 200) {
                 throw new Error('Failed to fetch data');
@@ -45,16 +45,16 @@ function addItem() {
 
     fetch(todoUrl, {
 
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-            body: JSON.stringify(item)
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+        body: JSON.stringify(item)
 
 
-        })
+    })
         .then(response => response.json())
         .then(() => {
             getItems();
@@ -66,13 +66,13 @@ function addItem() {
 function deleteItem(id) {
     fetch(`${todoUrl}/${id}`, {
 
-            method: 'DELETE',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-        })
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+    })
         .then(() => getItems())
         .catch(error => console.error('Unable to delete item.', error));
 }
@@ -96,15 +96,15 @@ function updateItem() {
     };
     fetch(`${todoUrl}/${itemId}`, {
 
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
 
-            },
-            body: JSON.stringify(item)
-        })
+        },
+        body: JSON.stringify(item)
+    })
         .then(() => getItems())
         .catch(error => console.error('Unable to update item.', error));
 
@@ -172,26 +172,22 @@ const usersButten = () => {
 
 function IsAdmin() {
     fetch('/Admin', {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-            body: JSON.stringify()
-        })
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+        body: JSON.stringify()
+    })
         .then(res => {
             if (res.status === 200)
                 usersButten();
-            // else
-            //     throw new Error();
         })
         .catch()
 }
 
 function updateUser() {
-    // const userId=document.getElementById('editUser-id');
-    // const typeuser=document.getElementById('editUser-type');
     const user = {
         Id: 0,
         Name: document.getElementById('editUser-name').value.trim(),
@@ -200,25 +196,25 @@ function updateUser() {
 
     };
     fetch(userUrl, {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-            body: JSON.stringify(user)
-        })
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+        body: JSON.stringify(user)
+    })
         .catch(error => console.error('Unable to update item.', error));
-        closeeditUserInput();
+    closeeditUserInput();
     return false;
 }
 
-function closeeditUserInput(){
+function closeeditUserInput() {
     document.getElementById('editUserForm').hidden = true;
 }
 
-   function _displayUserDetails() {
-        const UserDetails=document.getElementById('editUserForm');
-        UserDetails.hidden=false;
+function _displayUserDetails() {
+    const UserDetails = document.getElementById('editUserForm');
+    UserDetails.hidden = false;
 
 }

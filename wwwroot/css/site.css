@@ -1,25 +1,62 @@
-input[type='submit'],
-button,
-[aria-label] {
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+button {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
     cursor: pointer;
 }
 
-#editForm {
-    display: none;
-}
-
 table {
-    font-family: Arial, sans-serif;
-    border: 1px solid;
+    width: 100%;
     border-collapse: collapse;
 }
 
-th {
-    background-color: #f8f8f8;
-    padding: 5px;
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-td {
-    border: 1px solid;
-    padding: 5px;
+/* Specific styling for Task CRUD page */
+#editUserForm,
+#editForm {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Specific styling for UserList page */
+#addForm {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
 }
