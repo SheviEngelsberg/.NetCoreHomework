@@ -20,7 +20,7 @@ namespace myTask.Controllers
 
         //Get all user's to-do items 
         [HttpGet]
-        // [Authorize(Policy = "User")]
+        [Authorize(Policy = "User")]
         public ActionResult<List<TheTask>> GetAll()
         {
             var tasks = TaskService.GetAll(UserId);

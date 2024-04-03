@@ -9,14 +9,14 @@ IsAdmin();
 
 function getItems() {
     fetch(todo, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': Authorization
+            },
 
-    })
+        })
         .then(response => {
             if (response.status != 200) {
                 throw new Error('Failed to fetch data');
@@ -42,16 +42,16 @@ function addItem() {
 
     fetch(todo, {
 
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
-        body: JSON.stringify(item)
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': Authorization
+            },
+            body: JSON.stringify(item)
 
 
-    })
+        })
         .then(response => response.json())
         .then(() => {
             getItems();
@@ -63,13 +63,13 @@ function addItem() {
 function deleteItem(id) {
     fetch(`${todo}/${id}`, {
 
-        method: 'DELETE',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
-    })
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': Authorization
+            },
+        })
         .then(() => getItems())
         .catch(error => console.error('Unable to delete item.', error));
 }
@@ -93,15 +93,15 @@ function updateItem() {
     };
     fetch(`${todo}/${itemId}`, {
 
-        method: 'PUT',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': Authorization
 
-        },
-        body: JSON.stringify(item)
-    })
+            },
+            body: JSON.stringify(item)
+        })
         .then(() => getItems())
         .catch(error => console.error('Unable to update item.', error));
 
@@ -169,14 +169,14 @@ const usersButten = () => {
 
 function IsAdmin() {
     fetch('/Admin', {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
-        body: JSON.stringify()
-    })
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': Authorization
+            },
+            body: JSON.stringify()
+        })
         .then(res => {
             if (res.status === 200)
                 usersButten();
@@ -192,15 +192,16 @@ function updateUser() {
         Type: null
 
     };
+    alert(user)
     fetch(userUrl, {
-        method: 'PUT',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
-        body: JSON.stringify(user)
-    })
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': Authorization
+            },
+            body: JSON.stringify(user)
+        })
         .catch(error => console.error('Unable to update item.', error));
     closeeditUserInput();
     return false;
