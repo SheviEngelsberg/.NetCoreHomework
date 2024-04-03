@@ -1,5 +1,4 @@
-const todoUrl = '/api/todo';
-
+const todo = '/api/todo';
 const userUrl = '/api/user'
 let tasks = [];
 const token = localStorage.getItem("token");
@@ -9,9 +8,7 @@ getItems();
 IsAdmin();
 
 function getItems() {
-
-    fetch(todoUrl, {
-
+    fetch(todo, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -29,7 +26,7 @@ function getItems() {
         .then(data => _displayItems(data))
         .catch(error => {
             console.error('Unable to get items.', error);
-            window.location.href = "html/home.html";
+            // window.location.href = "../index.html";
         });
 }
 
@@ -43,7 +40,7 @@ function addItem() {
 
     };
 
-    fetch(todoUrl, {
+    fetch(todo, {
 
         method: 'POST',
         headers: {
@@ -64,7 +61,7 @@ function addItem() {
 }
 
 function deleteItem(id) {
-    fetch(`${todoUrl}/${id}`, {
+    fetch(`${todo}/${id}`, {
 
         method: 'DELETE',
         headers: {
@@ -94,7 +91,7 @@ function updateItem() {
         UserId: 0
 
     };
-    fetch(`${todoUrl}/${itemId}`, {
+    fetch(`${todo}/${itemId}`, {
 
         method: 'PUT',
         headers: {
@@ -124,7 +121,7 @@ function _displayCount(itemCount) {
 }
 
 function _displayItems(data) {
-    console.log(data);
+    console.log("data");
     const tBody = document.getElementById('Tasks');
     tBody.innerHTML = '';
 

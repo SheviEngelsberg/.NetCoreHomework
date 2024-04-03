@@ -1,13 +1,18 @@
 
 const loginUrl = "/api/login"
 
+// if(localStorage.getItem('token')){
+//     window.location.href="tasks.html";
+// }
 function getDetailsForLogin() {
     const name = document.getElementById('name').value.trim();
     const password = document.getElementById('password').value.trim();
+    console.log(name)
     Login(name, password)
 }
 
 function Login(name, password) {
+
     fetch(loginUrl, {
         method: 'POST',
         headers: {
@@ -21,8 +26,11 @@ function Login(name, password) {
             Type: "string"
         })
     })
-        .then(response => response.json())
+        .then(response => {
+            response.json()
+        })
         .then(data => {
+            console.log("data")
             saveToken(data);
         })
         .catch(error => console.error('Unable to save token.', error));
@@ -51,7 +59,8 @@ function parseJwt(token) {
 }
 
 function saveToken(token) {
+    console.log(token);
     localStorage.setItem("token", token);
-    var homePagePath = "/html/tasks.html";
+    var homePagePath = "tasks.html";
     window.location.href = homePagePath;
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l6lZZ7LKNmhxexiWjuTH4sTxj/tex3DAnP3T6JWVgZhvtN4crEoo9jEBtJERpIqV5BgaYBKL1VUhR0m3vicu7g==",
+  "dgSpecHash": "nBzLjOQiZ5NRF9RBogvgkSd1za5gdLJ8fR1gzptZzdsc0jSkmrnhJSUgO02SCiNjwJEW2I3duXtc02O7jmePQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\core\\03-04-2024\\.NetCoreHomework\\myTask.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\core\\2024-04-03\\.NetCoreHomework\\myTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.4\\microsoft.aspnetcore.authentication.jwtbearer.5.0.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
