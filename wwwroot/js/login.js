@@ -12,35 +12,34 @@ function getDetailsForLogin() {
 
 function login(name, password) {
     fetch(loginUrl, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                Id: 0,
-                Name: name,
-                Password: password,
-                Type: "user"
-            })
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            Id: 0,
+            Name: name,
+            Password: password,
+            Type: "user"
         })
+    })
         .then(response => response.json())
         .then(data => {
             saveToken(data)
         })
 
-    .catch(error =>
-        console.error('Unable to save token.', error));
+        .catch(error =>
+            console.error('Unable to save token.', error));
 }
 
 function handleCredentialResponse(response) {
     if (response.credential) {
         var idToken = response.credential;
         var decodedToken = parseJwt(idToken);
-        var userId = decodedToken.sub;
         var userName = decodedToken.name;
-        alert(userId,55);
-        login(userName, userId);
+        var userPassword = decodedToken.sub;
+        login(userName, userPassword);
     } else {
         alert('Google Sign-In was cancelled.');
     }
@@ -49,7 +48,7 @@ function handleCredentialResponse(response) {
 function parseJwt(token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
 

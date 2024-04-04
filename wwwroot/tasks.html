@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="css/site.css" />
 </head>
 
-<body>
+<body >
     <h1>Task CRUD</h1>
-    <button type="button" onclick="_displayUserDetails()">edit-user</button>
+    <button type="button" onclick="displayUserDetails()">edit-user</button>
     <div id="editUserForm" hidden>
-        <h3>Edit-User Details</h3>
         <form action="javascript:void(0);" onsubmit="updateUser()">
             <input type="text" id="editUser-name" required>
             <input type="password" id="editUser-password" required>
@@ -20,15 +19,13 @@
         </form>
     </div>
 
-    <h3>Add</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+    <form action="javascript:void(0);" method="POST" onsubmit="addTask()">
         <input type="text" id="add-name" placeholder="New Task" required>
         <input type="submit" value="Add">
     </form>
 
     <div id="editForm">
-        <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="updateItem()">
+        <form action="javascript:void(0);" onsubmit="updateTask()">
             <input type="hidden" id="edit-id">
             <input type="checkbox" id="edit-isDone">
             <input type="text" id="edit-name">
@@ -48,9 +45,11 @@
         </tr>
         <tbody id="Tasks"></tbody>
     </table>
+    
     <a id="forAdmin" hidden href="./users.html">all users</a>
 
 </body>
 <script src="js/tasks.js"></script>
+
 
 </html>

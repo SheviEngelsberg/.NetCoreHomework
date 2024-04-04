@@ -1,24 +1,15 @@
-using myTask.Interfaces;
-using myTask.Models;
-using System.Text.Json;
-using Microsoft.AspNetCore.Hosting;
-using System.IO;
-using System.Diagnostics;
+
 using System.Text;
 using System.Security.Claims;
-using System.Collections.Generic;
-using System;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace myTask.Services
 {
-public static class tokenService 
-{
-  private static SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
-        private static string issuer = "https://tasks.com";
+    public static class TokenService
+    {
+        private static readonly SymmetricSecurityKey key = new(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
+        private static readonly string issuer = "https://tasks.com";
         public static SecurityToken GetToken(List<Claim> claims) =>
             new JwtSecurityToken(
                 issuer,
@@ -29,19 +20,18 @@ public static class tokenService
             );
 
         public static TokenValidationParameters GetTokenValidationParameters() =>
-            new TokenValidationParameters
+            new()
             {
                 ValidIssuer = issuer,
                 ValidAudience = issuer,
                 IssuerSigningKey = key,
-                ClockSkew = TimeSpan.Zero 
+                ClockSkew = TimeSpan.Zero
             };
 
         public static string WriteToken(SecurityToken token) =>
             new JwtSecurityTokenHandler().WriteToken(token);
+    }
+}
 
-}
-}
-    
 
 

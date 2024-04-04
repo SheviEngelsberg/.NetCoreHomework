@@ -31,9 +31,9 @@ namespace myTask.Controllers
 
             if (myUser.Type == "admin")
                 claims.Add(new Claim("Type", "Admin"));
-            var token = tokenService.GetToken(claims);
+            var token = TokenService.GetToken(claims);
 
-            return new OkObjectResult(tokenService.WriteToken(token));
+            return new OkObjectResult(TokenService.WriteToken(token));
         }
     }
 }

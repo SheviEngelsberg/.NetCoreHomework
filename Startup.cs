@@ -36,7 +36,7 @@ namespace core_l1
             .AddJwtBearer(cfg =>
             {
                 cfg.RequireHttpsMetadata = false;
-                cfg.TokenValidationParameters = tokenService.GetTokenValidationParameters();
+                cfg.TokenValidationParameters = TokenService.GetTokenValidationParameters();
             });
             services.AddAuthorization(cfg =>
             {

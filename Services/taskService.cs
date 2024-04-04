@@ -8,87 +8,91 @@ using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
 
 
-public class taskService : ITaskService
+public class TaskService : ITaskService
 {
-    List<TheTask> tasks {get;}
-    
-    private string fileName ="tasks.json";
-    public taskService(IWebHostEnvironment  webHost)
+    List<TheTask> Tasks { get; }
+    private readonly string fileName = "tasks.json";
+    public TaskService(IWebHostEnvironment webHost)
     {
-        this.fileName =Path.Combine(webHost.ContentRootPath,"Data" ,"tasks.json");
-        using (var jsonFile = File.OpenText(fileName))
+        fileName = Path.Combine(webHost.ContentRootPath, "Data", "tasks.json");
+        using var jsonFile = File.OpenText(fileName);
+        Tasks = JsonSerializer.Deserialize<List<TheTask>>(jsonFile.ReadToEnd(),
+        new JsonSerializerOptions
         {
-            tasks = JsonSerializer.Deserialize<List<TheTask>>(jsonFile.ReadToEnd(),
-            new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });  
-        }
-    }
-    
-    private void saveToFile()
-    {
-        File.WriteAllText(fileName, JsonSerializer.Serialize(tasks));
+            PropertyNameCaseInsensitive = true
+        });
     }
 
-    //שליפת כל המשימות של משתמש מסויים
+    // Saves the tasks data to a file using JSON serialization.
+    private void SaveToFile()
+    {
+        File.WriteAllText(fileName, JsonSerializer.Serialize(Tasks));
+    }
+
+    //Retrieving all the tasks of a certain user 
     public List<TheTask> GetAll(int userId)
     {
-        List<TheTask> userTasks=new List<TheTask>();
-        userTasks=tasks.Where(t=>t.UserId==userId).ToList();
+        List<TheTask> userTasks = new List<TheTask>();
+        userTasks = Tasks.Where(t => t.UserId == userId).ToList();
         return userTasks;
     }
 
-    //שליפה של משימה מסויימת של משתמש מסויים
+    // Retrieving a certain task of a certain user
     public TheTask Get(int taskId, int userId)
     {
-        return tasks.FirstOrDefault(t=> t.Id==taskId&&t.UserId==userId);
+        TheTask task = Tasks.FirstOrDefault(t => t.Id == taskId);
+        if (task != null && task.UserId == userId)
+            return task;
+        return null;
     }
 
-    //הוספת משימה מסויימת למשתמש מסויים
+    //Adding a specific task to a specific user
     public void Add(int userId, TheTask newTask)
     {
-        newTask.UserId=userId;
+        newTask.UserId = userId;
         newTask.Id = GetNextId();
-        tasks.Add(newTask);
-        saveToFile();
+        Tasks.Add(newTask);
+        SaveToFile();
     }
 
-   
-    //עידכון משימה
+
+    //Updating a task
     public void Update(TheTask task)
     {
-        var index = tasks.FindIndex(t => t.Id == task.Id);
+        var index = Tasks.FindIndex(t => t.Id == task.Id);
         if (index == -1)
             return;
 
-        tasks[index] = task;
-        saveToFile();
+        Tasks[index] = task;
+        SaveToFile();
     }
 
-    // מחיקת משימה
+    //Deleting a task
     public void Delete(int taskId, int userId)
     {
-        TheTask task = Get(taskId,userId);
+        TheTask task = Get(taskId, userId);
         if (task is null)
             return;
 
-        tasks.Remove(task);
-        saveToFile();
+        Tasks.Remove(task);
+        SaveToFile();
     }
+
+    //Deleting all tasks of a certain user
     public void DeleteByUserId(int userId)
     {
-        tasks.RemoveAll(task => task.UserId == userId);
+        Tasks.RemoveAll(task => task.UserId == userId);
     }
 
-    public int GetNextId()=>tasks.Max(task=>task.Id)+1;
-    //מספר המשימות
-    public int Count => tasks.Count();
+    //Returning the id
+    public int GetNextId() => Tasks.Max(task => task.Id) + 1;
+    public int Count => Tasks.Count;
 
 }
-    public static class TaskUtils{
-        public static void AddTask(this IServiceCollection service)
-        {
-            service.AddSingleton<ITaskService,taskService>();
-        }
+public static class TaskUtils
+{
+    public static void AddTask(this IServiceCollection service)
+    {
+        service.AddSingleton<ITaskService, TaskService>();
     }
+}

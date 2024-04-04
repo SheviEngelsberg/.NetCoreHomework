@@ -2,44 +2,42 @@ const AllusersUrl = "/api/Allusers";
 const userUrl = "/api/user"
 users = [];
 const token = localStorage.getItem("token");
-const Authorization = "Bearer " + token;
+const Authorization = `Bearer ${token}`;
 
 getUsersList();
 
 function getUsersList() {
     fetch(AllusersUrl, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
 
-
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-
-        })
+    })
         .then(response => {
             if (response.status != 200) {
                 throw new Error('Failed to fetch data');
             }
             return response.json();
         })
-        .then(data => _displayUsers(data))
+        .then(data => displayUsers(data))
         .catch(error => {
             console.error('Unable to get users.', error);
         });
 }
 
-function _displayCount(userCount) {
+function displayCount(userCount) {
     const name = (userCount === 1) ? 'user' : 'users';
-    document.getElementById('counter').innerText = `${userCount} ${name}`;
+    document.getElementById('counter').innerText = `There are ${userCount} ${name} in the user list`;
 }
 
-function _displayUsers(usersList) {
+function displayUsers(usersList) {
     const usersBody = document.getElementById('Users');
     usersBody.innerHTML = '';
 
-    _displayCount(usersList.length);
+    displayCount(usersList.length);
 
     const button = document.createElement('button');
 
@@ -76,13 +74,13 @@ function _displayUsers(usersList) {
 
 function deleteUser(id) {
     fetch(`${userUrl}/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-        })
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+    })
         .then(() => getUsersList())
         .catch(error => console.error('Unable to delete item.', error));
 }
@@ -101,16 +99,16 @@ function addUser() {
     fetch(userUrl, {
 
 
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-            body: JSON.stringify(user)
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+        body: JSON.stringify(user)
 
 
-        })
+    })
         .then(response =>
             response.json())
         .then(() => {
@@ -119,3 +117,11 @@ function addUser() {
         })
         .catch(error => console.error('Unable to add user.', error));
 }
+const usersButten = () => {
+    const linkToUsers = document.getElementById('forAdmin');
+    linkToUsers.hidden = false;
+}
+
+
+
+

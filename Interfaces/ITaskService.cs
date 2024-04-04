@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
 using myTask.Models;
-using System.Collections.Generic;
 
 namespace myTask.Interfaces
 {

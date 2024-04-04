@@ -17,7 +17,9 @@ namespace myTask.Controllers
         {
             this.userService = userService;
             this.taskService = taskService;
+#pragma warning disable CS8604 // Possible null reference argument.
             UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value, CultureInfo.InvariantCulture);
+#pragma warning restore CS8604 // Possible null reference argument.
         }
 
         //Get all users

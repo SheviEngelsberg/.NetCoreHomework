@@ -4,90 +4,86 @@ namespace myTask.Services;
 using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using System.Diagnostics;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-public class userService : IUserService
+public class UserService : IUserService
 {
-    List<User> users {get;}
-    
-    private string fileName ="users.json";
-    public userService(IWebHostEnvironment  webHost)
+    List<User> Users { get; }
+    private readonly string fileName = "users.json";
+    public UserService(IWebHostEnvironment webHost)
     {
-        this.fileName =Path.Combine(webHost.ContentRootPath,"Data" ,"users.json");
-        using (var jsonFile = File.OpenText(fileName))
+        fileName = Path.Combine(webHost.ContentRootPath, "Data", "users.json");
+        using var jsonFile = File.OpenText(fileName);
+        Users = JsonSerializer.Deserialize<List<User>>(jsonFile.ReadToEnd(),
+        new JsonSerializerOptions
         {
-            users = JsonSerializer.Deserialize<List<User>>(jsonFile.ReadToEnd(),
-            new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-           
-            
-        }
-       
-    }
-    private void saveToFile()
-    {
-        File.WriteAllText(fileName, JsonSerializer.Serialize(users));
+            PropertyNameCaseInsensitive = true
+        });
     }
 
-    //שליפת משתמש לפי ID
-    public  User Get(int userId) 
+    // Saves the users data to a file using JSON serialization.
+    private void SaveToFile()
     {
-        return users.FirstOrDefault(p => p.Id == userId);
+        File.WriteAllText(fileName, JsonSerializer.Serialize(Users));
     }
-    //שליפת כל המשתמשים הקיימים
-    public List<User> GetAll() => users;
 
-    //הוספת משתמש
+    //Retrieving all existing users
+    public List<User> GetAll() => Users;
+
+    //Retrieving user by id
+    public User Get(int userId)
+    {
+        return Users.FirstOrDefault(u => u.Id == userId);
+    }
+
+    //Adding user
     public void Add(User newUser)
     {
         newUser.Id = GetNextId();
-        users.Add(newUser);
-        saveToFile();
+        Users.Add(newUser);
+        SaveToFile();
     }
+
+    //Updating a user
     public void Update(User user)
     {
-        var index = users.FindIndex(u => u.Id == user.Id);
+        var index = Users.FindIndex(u => u.Id == user.Id);
         if (index == -1)
             return;
 
-        users[index] = user;
-        saveToFile();
+        Users[index] = user;
+        SaveToFile();
     }
-    //מחיקת משתמש לפי ID
+
+    //Deleting a user by id
     public void Delete(int userId)
     {
         var user = Get(userId);
         if (user is null)
             return;
 
-        users.Remove(user);
-        saveToFile();
+        Users.Remove(user);
+        SaveToFile();
     }
+
+    //Returning the id
+    public int GetNextId() => Users.Max(user => user.Id) + 1;
 
     public object GetToken(List<Claim> claims)
     {
         throw new NotImplementedException();
     }
 
-    public int GetNextId()=>users.Max(user=>user.Id)+1;
-    public int Count => users.Count();
-
-    // private string GetDebuggerDisplay()
-    // {
-    //     return ToString();
-    // }
-
+    public int Count => Users.Count;
 }
-    public static class UserUtils{
-        public static void AddUser(this IServiceCollection service){
-            service.AddSingleton<IUserService,userService>();
-        }
+public static class UserUtils
+{
+    public static void AddUser(this IServiceCollection service)
+    {
+        service.AddSingleton<IUserService, UserService>();
     }
+}
 
 
