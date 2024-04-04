@@ -1,0 +1,8 @@
+bin
+obj
+.editorconfig
+Properties
+appsettings.Development.json
+appsettings.json
+core_l1.sln
+myTask.csproj
