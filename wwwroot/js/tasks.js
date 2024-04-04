@@ -54,8 +54,6 @@ function addItem() {
                 'Authorization': Authorization
             },
             body: JSON.stringify(item)
-
-
         })
         .then(response => response.json())
         .then(() => {

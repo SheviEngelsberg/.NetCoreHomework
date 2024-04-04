@@ -2,68 +2,61 @@ using Microsoft.AspNetCore.Mvc;
 using myTask.Models;
 using myTask.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using myTask.Services;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Diagnostics;
+using System.Globalization;
 
-namespace myTask.Controllers{
-    [ApiController]
-[Route("/api/user")]
-public class userController : ControllerBase
+namespace myTask.Controllers
 {
-    IUserService userService;
-    ITaskService taskService;
-    readonly int UserId;
-
-    // public object UserService { get; private set; }
-
-    public userController(IUserService userService,ITaskService taskService, IHttpContextAccessor httpContextAccessor)
+    [ApiController]
+    [Route("/api/user")]
+    public class UserController : ControllerBase
     {
-        this.userService = userService;
-        this.taskService = taskService;
-        this.UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value);
-    }
+        readonly IUserService userService;
+        readonly ITaskService taskService;
+        readonly int UserId;
+        public UserController(IUserService userService, ITaskService taskService, IHttpContextAccessor httpContextAccessor)
+        {
+            this.userService = userService;
+            this.taskService = taskService;
+            UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value, CultureInfo.InvariantCulture);
+        }
 
-     [HttpGet("/api/Allusers")]
-     [Authorize(Policy="Admin")]
-     public ActionResult<List<User>> GetAll()=>
-         userService.GetAll();
-    
-    //שליפת משתמש לפי מזהה
-    [HttpGet]
-    [Authorize(Policy="User")]
+        //Get all users
+        [HttpGet("/api/Allusers")]
+        [Authorize(Policy = "Admin")]
+        public ActionResult<List<User>> GetAll() =>
+            userService.GetAll();
 
-    public ActionResult<User> Get()
-    {
-        // var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+        //Get my user
+        [HttpGet]
+        [Authorize(Policy = "User")]
+        public ActionResult<User> Get()
+        {
+            var user = userService.Get(UserId);
+            if (user == null)
+                return NotFound();
+            return user;
+        }
 
-        var user = userService.Get(UserId);
-        if (user == null)
-            return NotFound();
-        return user;
-    }
+        //Add a new user 
+        [HttpPost]
+        [Authorize(Policy = "Admin")]
+        public IActionResult Create(User user)
+        {
+            if (user is null)
+                return BadRequest("user is null");
+            userService.Add(user);
+            return CreatedAtAction(nameof(Create), new { id = user.Id }, user);
+        }
 
-
-    [HttpPost]
-    [Authorize(Policy="Admin")]
-
-    public IActionResult Create(User user)
-    {
-        if(user is null)
-            return BadRequest("user is null");
-        userService.Add(user);
-        return CreatedAtAction(nameof(Create), new {id=user.Id}, user);
-
-    }
+        //Delete user and all his to-do's
         [HttpDelete]
         [Route("{userId}")]
-        [Authorize(Policy="Admin")]
+        [Authorize(Policy = "Admin")]
         public IActionResult Delete(int userId)
         {
             var user = userService.Get(userId);
             if (user is null)
-                return  NotFound();
+                return NotFound();
 
             userService.Delete(userId);
             taskService.DeleteByUserId(userId);
@@ -71,17 +64,29 @@ public class userController : ControllerBase
             return Content(userService.Count.ToString());
         }
 
+        //Update the user
         [HttpPut]
         [Authorize(Policy = "User")]
-        public IActionResult Update([FromBody]User user)
+        public IActionResult Update([FromBody] User user)
         {
-            user.Id=UserId;
+            user.Id = UserId;
             var existingUser = userService.Get(user.Id);
             if (existingUser is null)
                 return NotFound();
             userService.Update(user);
             return NoContent();
-        }}
+        }
+
+        //Check if it is a manager
+        [HttpGet]
+        [Route("/Admin")]
+        [Authorize(Policy = "Admin")]
+        public ActionResult<string> IsAdmin()
+        {
+            return new OkObjectResult("true");
+        }
+
+    }
 
 }
 

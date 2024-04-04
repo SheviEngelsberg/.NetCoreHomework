@@ -5,8 +5,8 @@ const loginUrl = "/api/login";
 // }
 
 function getDetailsForLogin() {
-    const name = document.getElementById('name').value.trim();
-    const password = document.getElementById('password').value.trim();
+    var name = document.getElementById('name').value;
+    var password = document.getElementById('password').value;
     login(name, password);
 }
 
@@ -57,8 +57,7 @@ function parseJwt(token) {
 }
 
 function saveToken(token) {
-
     localStorage.setItem("token", token);
     var homePagePath = "tasks.html";
-   // window.location.href = homePagePath;
+    window.location.href = homePagePath;
 }

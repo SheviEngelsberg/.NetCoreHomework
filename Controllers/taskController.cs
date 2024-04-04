@@ -2,20 +2,20 @@ using Microsoft.AspNetCore.Mvc;
 using myTask.Models;
 using myTask.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Globalization;
 
 namespace myTask.Controllers
 {
     [ApiController]
     [Route("/api/todo")]
-    public class taskController : ControllerBase
+    public class TaskController : ControllerBase
     {
-        ITaskService TaskService;
+        readonly ITaskService TaskService;
         readonly int UserId;
-        public taskController(ITaskService TaskService, IHttpContextAccessor httpContextAccessor)
+        public TaskController(ITaskService TaskService, IHttpContextAccessor httpContextAccessor)
         {
             this.TaskService = TaskService;
-            this.UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value);
+            UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value, CultureInfo.InvariantCulture);
         }
 
         //Get all user's to-do items 
@@ -35,7 +35,6 @@ namespace myTask.Controllers
         [HttpGet]
         [Route("{taskId}")]
         [Authorize(Policy = "User")]
-
         public ActionResult<TheTask> Get(int taskId)
         {
             var task = TaskService.Get(taskId, UserId);
@@ -54,14 +53,12 @@ namespace myTask.Controllers
             return CreatedAtAction(nameof(Create), new { id = task.Id }, task);
         }
 
-        
+        //Update user's to-do item 
         [HttpPut]
         [Route("{taskId}")]
         [Authorize(Policy = "User")]
-
         public IActionResult Update(int taskId, TheTask task)
         {
-
             if (taskId != task.Id)
                 return BadRequest();
 
@@ -71,10 +68,10 @@ namespace myTask.Controllers
 
             TaskService.Update(task);
             task.UserId = UserId;
-
             return NoContent();
         }
 
+        //Delete user's to-do item
         [HttpDelete]
         [Route("{taskId}")]
         [Authorize(Policy = "User")]
@@ -87,12 +84,6 @@ namespace myTask.Controllers
             TaskService.Delete(taskId, UserId);
             return NoContent();
         }
-        [Route("/Admin")]
-        [HttpGet]
-        [Authorize(Policy = "Admin")]
-        public ActionResult<string> IsAdmin()
-        {
-            return new OkObjectResult("true");
-        }
+    
     }
 }
