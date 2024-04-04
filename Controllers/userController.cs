@@ -37,6 +37,7 @@ public class userController : ControllerBase
     public ActionResult<User> Get()
     {
         // var userId = Convert.ToInt32(User.FindFirst("Id").Value);
+
         var user = userService.Get(UserId);
         if (user == null)
             return NotFound();
@@ -70,22 +71,17 @@ public class userController : ControllerBase
             return Content(userService.Count.ToString());
         }
 
-    [HttpPut]
+        [HttpPut]
         [Authorize(Policy = "User")]
-
         public IActionResult Update([FromBody]User user)
         {
-            // var userId = Convert.ToInt32(User.FindFirst("Id").Value);
-            var userType = User.FindFirst("Type").Value.ToLower();
-            // Console.WriteLine(userType);
-            var existingUser = userService.Get(UserId);
+            user.Id=UserId;
+            var existingUser = userService.Get(user.Id);
             if (existingUser is null)
                 return NotFound();
-            user.Id = UserId;
-            user.Type=userType;
             userService.Update(user);
-
             return NoContent();
         }}
 
 }
+

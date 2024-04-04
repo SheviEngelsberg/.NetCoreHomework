@@ -3,9 +3,14 @@ const userUrl = '/api/user'
 let tasks = [];
 const token = localStorage.getItem("token");
 const Authorization = "Bearer " + token;
+const tokenParts = token.split('.');
+const payload = JSON.parse(atob(tokenParts[1]));
+const userType = payload.Type;
+const userId = payload.id;
 
 getItems();
 IsAdmin();
+
 
 function getItems() {
     fetch(todo, {
@@ -26,7 +31,8 @@ function getItems() {
         .then(data => _displayItems(data))
         .catch(error => {
             console.error('Unable to get items.', error);
-            // window.location.href = "../index.html";
+            window.location.href = "../index.html";
+            
         });
 }
 
@@ -41,7 +47,6 @@ function addItem() {
     };
 
     fetch(todo, {
-
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -189,24 +194,32 @@ function updateUser() {
         Id: 0,
         Name: document.getElementById('editUser-name').value.trim(),
         Password: document.getElementById('editUser-password').value.trim(),
-        Type: null
-
+        Type: userType
     };
-    alert(user)
     fetch(userUrl, {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': Authorization
-            },
-            body: JSON.stringify(user)
-        })
-        .catch(error => console.error('Unable to update item.', error));
-    closeeditUserInput();
-    return false;
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+        body: JSON.stringify(user)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to update user');
+        }
+        return response.json();
+    })
+    .then(data => {
+        alert('User updated successfully');
+        closeeditUserInput();
+    })
+    .catch(error => {
+        console.error('Unable to update user.', error);
+        alert('Failed to update user. Please try again.');
+    });
 }
-
 function closeeditUserInput() {
     document.getElementById('editUserForm').hidden = true;
 }

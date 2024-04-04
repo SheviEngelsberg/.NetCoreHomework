@@ -526,3 +526,169 @@ Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\n
 Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
 Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
 Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
+Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.sourcelink.json
+Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.myTask.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.build.myTask.props
+Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.myTask.props
+Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.myTask.props
+Z:\B\אינגלסברג בת שבע\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.pack.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.Development.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\tasks.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\users.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.staticwebassets.runtime.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.exe
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.deps.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.runtimeconfig.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.pdb
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.OpenApi.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.AssemblyReference.cache
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.GeneratedMSBuildEditorConfig.editorconfig
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfoInputs.cache
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfo.cs
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CoreCompileInputs.cache
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cs
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cache
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.sourcelink.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.build.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.development.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.myTask.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.build.myTask.props
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.myTask.props
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.myTask.props
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.pack.json
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\scopedcss\bundle\myTask.styles.css
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CopyComplete
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\refint\myTask.dll
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
+Z:\B\סלומון תמר\core\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.Development.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\users.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\tasks.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.staticwebassets.runtime.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.exe
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.deps.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.runtimeconfig.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.pdb
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.OpenApi.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.AssemblyReference.cache
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.GeneratedMSBuildEditorConfig.editorconfig
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfoInputs.cache
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfo.cs
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CoreCompileInputs.cache
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cs
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cache
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.sourcelink.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.build.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.development.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.myTask.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.build.myTask.props
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.myTask.props
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.myTask.props
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.pack.json
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\scopedcss\bundle\myTask.styles.css
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CopyComplete
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\refint\myTask.dll
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
+Z:\B\אינגלסברג בת שבע\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\tasks.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\users.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.staticwebassets.runtime.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.exe
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.deps.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.runtimeconfig.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.pdb
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.AssemblyReference.cache
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfoInputs.cache
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfo.cs
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CoreCompileInputs.cache
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\scopedcss\bundle\myTask.styles.css
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CopyComplete
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\refint\myTask.dll
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
+C:\Users\The user\Desktop\לימודים\זילברברג\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.Development.json
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\appsettings.json
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\tasks.json
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Data\users.json
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.staticwebassets.runtime.json
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.exe
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.deps.json
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.runtimeconfig.json
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\myTask.pdb
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.AssemblyReference.cache
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.GeneratedMSBuildEditorConfig.editorconfig
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfoInputs.cache
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.AssemblyInfo.cs
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CoreCompileInputs.cache
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cs
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.MvcApplicationPartsAssemblyInfo.cache
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.build.json
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\staticwebassets.development.json
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\scopedcss\bundle\myTask.styles.css
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.csproj.CopyComplete
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\refint\myTask.dll
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.pdb
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\myTask.genruntimeconfig.cache
+D:\להגיש\2024-04-03\.NetCoreHomework\obj\Debug\net6.0\ref\myTask.dll

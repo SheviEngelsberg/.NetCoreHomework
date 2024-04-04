@@ -1,8 +1,9 @@
 const loginUrl = "/api/login";
 
-// if(localStorage.getItem('token')){
-//     window.location.href="tasks.html";
+// if (localStorage.getItem('token')) {
+//     window.location.href = "tasks.html";
 // }
+
 function getDetailsForLogin() {
     const name = document.getElementById('name').value.trim();
     const password = document.getElementById('password').value.trim();
@@ -30,7 +31,6 @@ function login(name, password) {
 
     .catch(error =>
         console.error('Unable to save token.', error));
-
 }
 
 function handleCredentialResponse(response) {
@@ -39,6 +39,7 @@ function handleCredentialResponse(response) {
         var decodedToken = parseJwt(idToken);
         var userId = decodedToken.sub;
         var userName = decodedToken.name;
+        alert(userId,55);
         login(userName, userId);
     } else {
         alert('Google Sign-In was cancelled.');
@@ -56,8 +57,8 @@ function parseJwt(token) {
 }
 
 function saveToken(token) {
-    console.log(token);
+
     localStorage.setItem("token", token);
     var homePagePath = "tasks.html";
-    //window.location.href = homePagePath;
+   // window.location.href = homePagePath;
 }
