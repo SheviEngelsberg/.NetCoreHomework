@@ -6,7 +6,6 @@ const Authorization = `Bearer ${token}`;
 
 getTasks();
 IsAdmin();
-getUserById();
 
 function getUserById() {
     fetch(userUrl, {
@@ -214,6 +213,7 @@ function closeeditUserInput() {
 }
 
 function updateUser() {
+    getUserById();
     const user = {
         Id: 0,
         Name: document.getElementById('editUser-name').value.trim(),

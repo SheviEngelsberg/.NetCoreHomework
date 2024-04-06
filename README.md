@@ -1,24 +1,26 @@
-README:Task Management System Project
+# Task Management System Project
 
-This project is a task management system consisting of a client-side written in JavaScript and a server-side written in .NETCORE. The system allows users to efficiently organize and manage their tasks.
+## Introduction:
+This project is a task management system that comprises a client-side written in JavaScript and a server-side written in .NETCORE. The system is designed to assist users in efficiently organizing and managing their tasks.
 
-#### Properties:
-User Authentication: Users are required to log in to access their tasks. After successful login, they receive a TOKEN for authentication.
-Task management:
+## Properties:
+- **User Authentication:** Users are required to log in to access their tasks. After a successful login, they receive a TOKEN for authentication.
+- **Task Management:**
   - Delete tasks
   - Edit tasks
   - Add tasks
   - Additional functions related to the task
 
-#### User permissions:
-Regular users:
+## User Permissions:
+- **Regular Users:**
   - Access their task list
-  - Performing task management operations
+  - Perform task management operations
 
-Administrators:
+- **Administrators:**
   - View the list of users
   - Add users
   - Delete users
   - Additional administrative functions
 
-This project aims to provide a structured and user-friendly interface for organizing tasks. Users can effectively handle their tasks and administrators have the necessary tools to manage users and tasks.
+## Project Objective:
+This project aims to provide a structured and user-friendly interface for organizing tasks. It enables users to effectively handle their tasks while providing administrators with the necessary tools to manage users and tasks efficiently.
