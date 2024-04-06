@@ -49,7 +49,6 @@ namespace myTask.Controllers
         public IActionResult Create(TheTask task)
         {
             TaskService.Add(UserId, task);
-            task.UserId = UserId;
             return CreatedAtAction(nameof(Create), new { id = task.Id }, task);
         }
 
@@ -67,7 +66,6 @@ namespace myTask.Controllers
                 return NotFound();
 
             TaskService.Update(task);
-            task.UserId = UserId;
             return NoContent();
         }
 

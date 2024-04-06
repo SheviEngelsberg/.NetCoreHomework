@@ -10,6 +10,5 @@ namespace myTask.Interfaces
         void Update(TheTask myTask);
         void Delete(int taskId,int userId);
         void DeleteByUserId(int userId);
-        int Count {get;}
     }
 }

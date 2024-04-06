@@ -17,9 +17,7 @@ namespace myTask.Controllers
         {
             this.userService = userService;
             this.taskService = taskService;
-#pragma warning disable CS8604 // Possible null reference argument.
             UserId = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst("Id")?.Value, CultureInfo.InvariantCulture);
-#pragma warning restore CS8604 // Possible null reference argument.
         }
 
         //Get all users
@@ -50,6 +48,18 @@ namespace myTask.Controllers
             return CreatedAtAction(nameof(Create), new { id = user.Id }, user);
         }
 
+        //Update the user
+        [HttpPut]
+        [Authorize(Policy = "User")]
+        public IActionResult Update([FromBody] User user)
+        {
+            var existingUser = userService.Get(user.Id);
+            if (existingUser is null)
+                return NotFound();
+            userService.Update(user);
+            return NoContent();
+        }
+
         //Delete user and all his to-do's
         [HttpDelete]
         [Route("{userId}")]
@@ -63,19 +73,6 @@ namespace myTask.Controllers
             userService.Delete(userId);
             taskService.DeleteByUserId(userId);
 
-            return Content(userService.Count.ToString());
-        }
-
-        //Update the user
-        [HttpPut]
-        [Authorize(Policy = "User")]
-        public IActionResult Update([FromBody] User user)
-        {
-            user.Id = UserId;
-            var existingUser = userService.Get(user.Id);
-            if (existingUser is null)
-                return NotFound();
-            userService.Update(user);
             return NoContent();
         }
 

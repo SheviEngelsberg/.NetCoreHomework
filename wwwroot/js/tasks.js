@@ -6,6 +6,33 @@ const Authorization = `Bearer ${token}`;
 
 getTasks();
 IsAdmin();
+getUserById();
+
+function getUserById() {
+    fetch(userUrl, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+
+    })
+        .then(response => {
+            if (response.status != 200) {
+                throw new Error('Failed to fetch data');
+            }
+            return response.json();
+        })
+        .then(data =>{
+            document.getElementById('editUser-name').value =data.name;
+            document.getElementById('editUser-password').value=data.password;
+        })
+        .catch(error => {
+            console.error('Unable to get items.', error);
+            window.location.href = "../index.html";
+        });
+}
 
 function getTasks() {
     fetch(todoUrl, {
@@ -100,7 +127,7 @@ function updateTask() {
         },
         body: JSON.stringify(task)
     })
-        .then(() => getItems())
+        .then(() => getTasks())
         .catch(error => console.error('Unable to update item.', error));
 
     closeInput();
@@ -137,7 +164,7 @@ function displayTasks(data) {
 
         let deleteButton = button.cloneNode(false);
         deleteButton.innerText = 'Delete';
-        deleteButton.setAttribute('onclick', `deleteItem(${task.id})`);
+        deleteButton.setAttribute('onclick', `deleteTask(${task.id})`);
 
         let tr = tBody.insertRow();
 
@@ -191,7 +218,7 @@ function updateUser() {
         Id: 0,
         Name: document.getElementById('editUser-name').value.trim(),
         Password: document.getElementById('editUser-password').value.trim(),
-        Type: userType
+        Type: ""
     };
     fetch(userUrl, {
         method: 'PUT',
@@ -205,11 +232,14 @@ function updateUser() {
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to update user');
+            }        })
+        .then(()=>
+            {
+                alert('update...');
+                closeeditUserInput();
+
             }
-            return response.json();
-        })
-        .then(
-            closeeditUserInput())
+         )
         .catch(error => {
             console.error('Unable to update user.', error);
             alert('Failed to update user. Please try again.');

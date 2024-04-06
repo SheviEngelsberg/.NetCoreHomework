@@ -1,5 +1,4 @@
 using myTask.Models;
-using System.Security.Claims;
 
 namespace myTask.Interfaces
 {
@@ -10,7 +9,5 @@ namespace myTask.Interfaces
         void Add(User user); 
         void Update(User user);
         void Delete(int id);
-        object GetToken(List<Claim> claims);
-        int Count { get; } 
     }
 }

@@ -16,6 +16,7 @@ public class UserService : IUserService
     {
         fileName = Path.Combine(webHost.ContentRootPath, "Data", "users.json");
         using var jsonFile = File.OpenText(fileName);
+        
         Users = JsonSerializer.Deserialize<List<User>>(jsonFile.ReadToEnd(),
         new JsonSerializerOptions
         {
@@ -52,7 +53,8 @@ public class UserService : IUserService
         var index = Users.FindIndex(u => u.Id == user.Id);
         if (index == -1)
             return;
-
+        user.Type=Users[index].Type;
+        user.Id=Users[index].Id;
         Users[index] = user;
         SaveToFile();
     }
@@ -76,8 +78,9 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public int Count => Users.Count;
 }
+
+// Extension method to add a UserService implementation as a singleton to the IServiceCollection
 public static class UserUtils
 {
     public static void AddUser(this IServiceCollection service)

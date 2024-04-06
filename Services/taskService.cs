@@ -38,7 +38,7 @@ public class TaskService : ITaskService
     }
 
     // Retrieving a certain task of a certain user
-    public TheTask Get(int taskId, int userId)
+    public TheTask? Get(int taskId, int userId)
     {
         TheTask task = Tasks.FirstOrDefault(t => t.Id == taskId);
         if (task != null && task.UserId == userId)
@@ -86,9 +86,10 @@ public class TaskService : ITaskService
 
     //Returning the id
     public int GetNextId() => Tasks.Max(task => task.Id) + 1;
-    public int Count => Tasks.Count;
 
 }
+
+// Extension method to register a TaskService implementation as a singleton in the IServiceCollection
 public static class TaskUtils
 {
     public static void AddTask(this IServiceCollection service)
