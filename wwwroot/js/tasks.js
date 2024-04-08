@@ -7,7 +7,33 @@ const Authorization = `Bearer ${token}`;
 getTasks();
 IsAdmin();
 
-function getUserById() {
+
+//Fetches all the tasks from the server and displays them
+function getTasks() {
+    fetch(todoUrl, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+
+    })
+        .then(response => {
+            if (response.status != 200) {
+                throw new Error('Failed to fetch data');
+            }
+            return response.json();
+        })
+        .then(data => displayTasks(data))
+        .catch(error => {
+            console.error('Unable to get tasks.', error);
+            window.location.href = "../index.html";
+        });
+}
+
+//Fetches the current user's details from the server and populates the edit form
+function getMyUser() {
     fetch(userUrl, {
         method: 'GET',
         headers: {
@@ -28,34 +54,12 @@ function getUserById() {
             document.getElementById('editUser-password').value=data.password;
         })
         .catch(error => {
-            console.error('Unable to get items.', error);
-            window.location.href = "../index.html";
+            console.error('Unable to get my user.', error);
         });
 }
 
-function getTasks() {
-    fetch(todoUrl, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
 
-    })
-        .then(response => {
-            if (response.status != 200) {
-                throw new Error('Failed to fetch data');
-            }
-            return response.json();
-        })
-        .then(data => displayTasks(data))
-        .catch(error => {
-            console.error('Unable to get items.', error);
-            window.location.href = "../index.html";
-        });
-}
-
+//Adds a new task and updates the task list
 function addTask() {
 
     const addNameTextbox = document.getElementById('add-name');
@@ -81,31 +85,10 @@ function addTask() {
             getTasks();
             addNameTextbox.value = '';
         })
-        .catch(error => console.error('Unable to add item.', error));
+        .catch(error => console.error('Unable to add task.', error));
 }
 
-function deleteTask(id) {
-    fetch(`${todoUrl}/${id}`, {
-
-        method: 'DELETE',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
-    })
-        .then(() => getTasks())
-        .catch(error => console.error('Unable to delete item.', error));
-}
-
-function displayEditForm(id) {
-    const task = tasks.find(t => t.id === id);
-    document.getElementById('edit-name').value = task.name;
-    document.getElementById('edit-id').value = task.id;
-    document.getElementById('edit-isDone').checked = task.isDone;
-    document.getElementById('editForm').style.display = 'block';
-}
-
+//Updates a task with the values from the edit form on the server and updates the task list
 function updateTask() {
 
     const taskId = document.getElementById('edit-id').value;
@@ -127,22 +110,46 @@ function updateTask() {
         body: JSON.stringify(task)
     })
         .then(() => getTasks())
-        .catch(error => console.error('Unable to update item.', error));
+        .catch(error => console.error('Unable to update task.', error));
 
     closeInput();
 
     return false;
 }
 
+//Deletes a task with the specified id from the server and updates the task list
+function deleteTask(id) {
+    fetch(`${todoUrl}/${id}`, {
+
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+    })
+        .then(() => getTasks())
+        .catch(error => console.error('Unable to delete task.', error));
+}
+
+
+//Displays the edit form for a task with the specified id
+function displayEditForm(id) {
+    const task = tasks.find(t => t.id === id);
+    document.getElementById('edit-name').value = task.name;
+    document.getElementById('edit-id').value = task.id;
+    document.getElementById('edit-isDone').checked = task.isDone;
+    document.getElementById('editForm').style.display = 'block';
+}
+
+//Closes the edit form
 function closeInput() {
     document.getElementById('editForm').style.display = 'none';
 }
 
-function displayCount(taskCount) {
-    const name = ( taskCount === 1) ? 'task' : 'tasks';
-    document.getElementById('counter').innerText = ` You have ${taskCount} ${name} on your task list! Successfully✨`;
-}
 
+
+//Displays the tasks in the table based on the data received from the server
 function displayTasks(data) {
     const tBody = document.getElementById('Tasks');
     tBody.innerHTML = '';
@@ -183,6 +190,16 @@ function displayTasks(data) {
 
     tasks = data;
 }
+
+
+//Displays the number of tasks in the task list
+function displayCount(taskCount) {
+    const name = ( taskCount === 1) ? 'task' : 'tasks';
+    document.getElementById('counter').innerText = ` You have ${taskCount} ${name} on your task list! Successfully✨`;
+}
+
+
+//Checks if the current user is an admin and displays a link to the users page if true
 function IsAdmin() {
     fetch('/Admin', {
         method: 'GET',
@@ -195,25 +212,33 @@ function IsAdmin() {
     })
         .then(res => {
             if (res.status === 200)
-                usersButten();
+                usersLink();
         })
         .catch()
 }
-const usersButten = () => {
+
+//Displays the link to the users page
+const usersLink = () => {
     const linkToUsers = document.getElementById('forAdmin');
     linkToUsers.hidden = false;
 }
+
+//Displays the user details form
 function displayUserDetails() {
     const UserDetails = document.getElementById('editUserForm');
     UserDetails.hidden = false;
 
 }
+
+//Closes the user details form
 function closeeditUserInput() {
     document.getElementById('editUserForm').hidden = true;
 }
 
+
+//Updates the current user's details on the server and closes the user details form 
 function updateUser() {
-    getUserById();
+    getMyUser();
     const user = {
         Id: 0,
         Name: document.getElementById('editUser-name').value.trim(),

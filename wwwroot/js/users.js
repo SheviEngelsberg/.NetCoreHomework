@@ -6,6 +6,8 @@ const Authorization = `Bearer ${token}`;
 
 getUsersList();
 
+
+//Fetches the list of users from the server and displays them
 function getUsersList() {
     fetch(AllusersUrl, {
         method: 'GET',
@@ -28,11 +30,54 @@ function getUsersList() {
         });
 }
 
-function displayCount(userCount) {
-    const name = (userCount === 1) ? 'user' : 'users';
-    document.getElementById('counter').innerText = `There are ${userCount} ${name} in the user list`;
+//Adds a new user to the server and updates the user list
+function addUser() {
+    const addNameTextbox = document.getElementById('add-name');
+    const addPasswordTextbox = document.getElementById('add-password');
+    const user = {
+        id: 0,
+        name: addNameTextbox.value.trim(),
+        password: addPasswordTextbox.value.trim(),
+        type: "user"
+
+    };
+
+    fetch(userUrl, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+        body: JSON.stringify(user)
+
+
+    })
+        .then(response =>
+            response.json())
+        .then(() => {
+            getUsersList();
+            addNameTextbox.value = '';
+        })
+        .catch(error => console.error('Unable to add user.', error));
 }
 
+//Deletes a user with the specified id from the server and updates the user list
+function deleteUser(id) {
+    fetch(`${userUrl}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': Authorization
+        },
+    })
+        .then(() => getUsersList())
+        .catch(error => console.error('Unable to delete user.', error));
+}
+
+
+//Displays the users in a table based on the data received from the server
 function displayUsers(usersList) {
     const usersBody = document.getElementById('Users');
     usersBody.innerHTML = '';
@@ -72,56 +117,11 @@ function displayUsers(usersList) {
     users = usersList;
 }
 
-function deleteUser(id) {
-    fetch(`${userUrl}/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
-    })
-        .then(() => getUsersList())
-        .catch(error => console.error('Unable to delete item.', error));
+//Displays the number of users in the user list
+function displayCount(userCount) {
+    const name = (userCount === 1) ? 'user' : 'users';
+    document.getElementById('counter').innerText = `There are ${userCount} ${name} in the user list`;
 }
-
-function addUser() {
-    const addNameTextbox = document.getElementById('add-name');
-    const addPasswordTextbox = document.getElementById('add-password');
-    const user = {
-        id: 0,
-        name: addNameTextbox.value.trim(),
-        password: addPasswordTextbox.value.trim(),
-        type: "user"
-
-    };
-
-    fetch(userUrl, {
-
-
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': Authorization
-        },
-        body: JSON.stringify(user)
-
-
-    })
-        .then(response =>
-            response.json())
-        .then(() => {
-            getUsersList();
-            addNameTextbox.value = '';
-        })
-        .catch(error => console.error('Unable to add user.', error));
-}
-const usersButten = () => {
-    const linkToUsers = document.getElementById('forAdmin');
-    linkToUsers.hidden = false;
-}
-
 
 
 

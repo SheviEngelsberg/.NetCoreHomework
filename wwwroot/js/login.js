@@ -4,12 +4,16 @@ const loginUrl = "/api/login";
 //     window.location.href = "tasks.html";
 // }
 
+
+//Retrieves user input and initiates login process
 function getDetailsForLogin() {
     var name = document.getElementById('name').value;
     var password = document.getElementById('password').value;
     login(name, password);
 }
 
+
+//Sends login request to the server and handles the response
 function login(name, password) {
     fetch(loginUrl, {
         method: 'POST',
@@ -29,10 +33,19 @@ function login(name, password) {
             saveToken(data)
         })
 
-        .catch(error =>
-            console.error('Unable to save token.', error));
+        .catch(
+            console.log("the user is not registered in the system, please contact the manager"))
+            
 }
 
+//Saves the token received from the server to the local storage and redirects the user to the home page
+function saveToken(token) {
+    localStorage.setItem("token", token);
+    var homePagePath = "tasks.html";
+    window.location.href = homePagePath;
+}
+
+//Processes Google Sign-In response
 function handleCredentialResponse(response) {
     if (response.credential) {
         var idToken = response.credential;
@@ -45,6 +58,8 @@ function handleCredentialResponse(response) {
     }
 }
 
+
+//Parses JWT token from Google Sign-In
 function parseJwt(token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -55,8 +70,4 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 }
 
-function saveToken(token) {
-    localStorage.setItem("token", token);
-    var homePagePath = "tasks.html";
-    window.location.href = homePagePath;
-}
+
