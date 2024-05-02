@@ -1,21 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using myTask.Interfaces;
 using myTask.Services;
 using myTask.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 
 namespace core_l1
 {
@@ -64,8 +50,6 @@ namespace core_l1
                     }
                 });
             });
-            // services.AddSingleton<ITaskService, taskService>();
-            // services.AddSingleton<IUserService, userService>();
             services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
             services.AddTask();
             services.AddUser();
@@ -74,7 +58,7 @@ namespace core_l1
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // app.UseMyMiddleExtensions("file.log");
+            app.UseMyMiddleExtensions("file.log");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

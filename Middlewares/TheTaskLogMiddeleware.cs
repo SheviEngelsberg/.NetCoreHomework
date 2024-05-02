@@ -4,6 +4,7 @@ namespace myTask.Middlewares
 {
     public class TheTaskLogMiddeleware
     {
+        private readonly object _lock = new object();
         private readonly RequestDelegate next;
         private readonly string logger;
 
@@ -25,8 +26,11 @@ namespace myTask.Middlewares
 
         private void WriteLogToFile(string logMessage)
         {
+            lock(_lock)
+            {
             using StreamWriter sw = File.AppendText(logger);
             sw.WriteLine(logMessage);
+             }
         }
     }
 
@@ -38,4 +42,3 @@ namespace myTask.Middlewares
         }
     }
 }
-
